@@ -2,10 +2,11 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';  
 import * as productAction from "../actions";
+import ProductCard from "../components/ProductCard"
 
 class Product extends React.Component {
     render() {
-        return this.props.productShow;
+        return <ProductCard product={this.props.productShow} />
     }
 }
 

@@ -2,10 +2,11 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import * as productsAction from "../actions";
+import ProductListTable from "../components/ProductListTable";
 
 class ProductList extends React.Component {
     render() {
-        return this.props.products;
+        return <ProductListTable products={this.props.products} />;
     }
 }
 
