@@ -1,11 +1,11 @@
 import { SHOW_ALL } from "./actions";
 
 const initialState = {
-    visibilityFilter: SHOW_ALL,
-    products: ["Product 1", "Product 2"],
-    product: "THis is the product",
-    productShow: "THis is product displayed"
-}
+  visibilityFilter: SHOW_ALL,
+    products: ["Product 1", "Product 2", "Product 1", "Product 2", "Product 1", "Product 2", "Product 1", "Product 2"],
+  product: "THis is the product",
+  productShow: "THis is product displayed"
+};
 
 export function todoApp(state, action) {
     if (typeof state === 'undefined') {
