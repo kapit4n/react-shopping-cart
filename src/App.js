@@ -6,25 +6,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductList from "./containers/ProductList";
 import Product from "./containers/Product";
 import Home from "./containers/Home";
+import Nav from "./components/Nav"
 
 class App extends Component {
   render() {
-    return <div className="App">
-        <header className="App-header">
-          <span className="input-group-btn">
-            <Link to="/" replace>
-              Home
-            </Link> |
-            <Link to="/productShow" replace>
-              Product
-            </Link> |
-            <Link to="/products">Products</Link>
-          </span>
+    return <div className="App row">
+      <header className="App-header col-md-12">
+          <Nav></Nav>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>
+        <div className="col-md-12">
           <Route exact path="/" component={Home} />
           <Route path="/products" component={ProductList} />
           <Route exact exact path="/productShow" component={Product} />

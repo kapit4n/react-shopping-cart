@@ -2,15 +2,16 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';  
 import * as productAction from "../actions";
+import HomeProducts from "../components/HomeProducts"
 
 class Home extends React.Component {
     render() {
-        return this.props.product;
+        return <HomeProducts products={this.props.products}></HomeProducts>
     }
 }
 
 function mapStateToProps(state, ownProps) {
-    return { product: state.product}
+    return { products: state.products}
 }
 
 function mapDispathProps(dispatch) {
