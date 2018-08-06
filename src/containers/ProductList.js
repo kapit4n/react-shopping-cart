@@ -11,7 +11,7 @@ class ProductList extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    return { products: state.products }
+    return { products: state.products.todoApp.products }
 }
 
 function mapDispathProps(dispatch) {

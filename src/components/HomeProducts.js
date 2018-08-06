@@ -1,8 +1,9 @@
 import React from 'react';
-import ProductCard from "./ProductCard"
 
-const HomeProducts = ({products}) => {
-    return <div>{products.map(product => <ProductCard product={product}></ProductCard>)}</div>
+const HomeProducts = ({children}) => {
+    return <div>
+        {children}
+      </div>;
 }
 
 export default HomeProducts;
