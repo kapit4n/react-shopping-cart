@@ -2,7 +2,7 @@ import React from "react"
 
 const ProductListTable = ({ products }) => {
   return <div>
-      <table>
+      <table class="table">
         <thead>
           <th>Index</th>
           <th>Product Name</th>
@@ -12,7 +12,7 @@ const ProductListTable = ({ products }) => {
             {" "}
             <td>{index}</td> <td>product</td>
             <td>
-              <a href={"/productShow"}>SHOW</a> |                             
+              <a href={"/productShow/" + index}>SHOW</a> |                             
               <a href={"/productShow"}>DELETE</a>
             </td>
           </tr>)}

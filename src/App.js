@@ -7,6 +7,7 @@ import ProductList from "./containers/ProductList";
 import Product from "./containers/Product";
 import Home from "./containers/Home";
 import Nav from "./components/Nav"
+import CartInfo from "./containers/CartInfo"
 
 class App extends Component {
   render() {
@@ -14,10 +15,15 @@ class App extends Component {
       <header className="App-header col-md-12">
           <Nav></Nav>
         </header>
-        <div className="col-md-12">
+      <div className="col-md-9" style={{ "margin-top": "20px" }}>
           <Route exact path="/" component={Home} />
           <Route path="/products" component={ProductList} />
-          <Route exact exact path="/productShow" component={Product} />
+          <Route exact exact path="/productShow/:id" component={Product} />
+        </div>
+        <div className="col-md-3">
+        <div style={{"margin-top": "20px"}}>
+            <CartInfo></CartInfo>
+          </div>
         </div>
       </div>;
   }

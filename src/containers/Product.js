@@ -2,11 +2,11 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';  
 import * as productAction from "../actions";
-import ProductCard from "../components/ProductCard"
+import ProductShow from "../components/ProductShow"
 
 class Product extends React.Component {
     render() {
-        return <ProductCard product={this.props.productShow} />
+        return <ProductShow product={this.props.productShow} productId={this.props.match.params.id} />;
     }
 }
 

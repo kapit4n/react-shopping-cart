@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProductCard = ({product}) => {
-  return <div class="card" style={{ width: "12rem", display: "inline-block", "border-width": "5px" }}>
+  return <div class="card" style={{ width: "12rem", display: "inline-block", "border-width": "5px", "border-style": "solid" }}>
     <img class="card-img-top" src="https://comps.canstockphoto.com/product-stock-illustration_csp28697982.jpg" alt="Card image cap" />
     <div class="card-body">
       <h5 class="card-title" style={{ position: "absolute", top: "1px", color: "black", 
