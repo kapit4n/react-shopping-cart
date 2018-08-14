@@ -20,7 +20,7 @@ class CartInfo extends React.Component {
                         <td>{product}</td>
                         <td>{index * 2}</td>
                         <td>
-                          <button class="btn" onClick={() => this.props.removeFromCart(product)}>
+                        <button class="btn" onClick={() => this.props.removeFromCart(index)}>
                             X
                           </button>
                         </td>

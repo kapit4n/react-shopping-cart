@@ -17,8 +17,8 @@ export const addToCart = product => dispatch => {
   dispatch({ type: PRODUCT_TO_CART, product });
 }
 
-export const removeFromCart = product => dispatch => {
-  dispatch({ type: REMOVE_FROM_CART, product });
+export const removeFromCart = index => dispatch => {
+  dispatch({ type: REMOVE_FROM_CART, index });
 }
 
 const receiveProducts = products => ({
