@@ -1,7 +1,6 @@
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';  
-import * as productAction from "../actions";
 import HomeProducts from "../components/HomeProducts"
 import { addToCart } from "../actions";
 import ProductCard from "../components/ProductCard";
@@ -28,8 +27,5 @@ function mapStateToProps(state, ownProps) {
     return { products: [] }
 }
 
-function mapDispathProps(dispatch) {
-    return { actions: bindActionCreators(productAction, dispatch) };
-}
 
 export default connect(mapStateToProps, { addToCart })(Home);

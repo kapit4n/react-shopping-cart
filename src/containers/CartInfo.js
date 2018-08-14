@@ -1,7 +1,7 @@
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import * as productAction from "../actions";
+import { removeFromCart } from "../actions";
 
 class CartInfo extends React.Component {
     render() {
@@ -16,11 +16,15 @@ class CartInfo extends React.Component {
                   <tbody>
                   {this.props.cartInfo.products.map((product, index) => {
                     return <tr>
-                      <td>{index}</td>
-                      <td>{product}</td>
-                      <td>{index*2}</td>
-                      <td><button class="btn">X</button></td>
-                    </tr>;
+                        <td>{index}</td>
+                        <td>{product}</td>
+                        <td>{index * 2}</td>
+                        <td>
+                          <button class="btn" onClick={() => this.props.removeFromCart(product)}>
+                            X
+                          </button>
+                        </td>
+                      </tr>;
                     })}
                   </tbody>
                 </table>
@@ -36,11 +40,8 @@ function mapStateToProps(state, ownProps) {
   return { cartInfo: state.products.todoApp.cartInfo };
 }
 
-function mapDispathProps(dispatch) {
-    return { actions: bindActionCreators(productAction, dispatch) };
-}
 
 export default connect(
   mapStateToProps,
-  mapDispathProps
+  { removeFromCart }
 )(CartInfo);
