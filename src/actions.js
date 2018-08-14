@@ -13,6 +13,7 @@ export const SHOW_ALL = "SHOW_ALL";
 export const PRODUCT_TO_CART = "PRODUCT_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
+export const ADD_PRODUCT = "ADD_PRODUCT";
 
 export const addToCart = product => dispatch => {
   dispatch({ type: PRODUCT_TO_CART, product });
@@ -20,6 +21,10 @@ export const addToCart = product => dispatch => {
 
 export const removeFromCart = index => dispatch => {
   dispatch({ type: REMOVE_FROM_CART, index });
+}
+
+export const addProduct = product => dispatch => {
+  dispatch({ type: ADD_PRODUCT, product });
 }
 
 export const removeProduct = product => dispatch => {

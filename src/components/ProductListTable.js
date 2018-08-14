@@ -1,7 +1,8 @@
 import React from "react"
 
-const ProductListTable = ({ products, removeProduct }) => {
+const ProductListTable = ({ products, removeProduct, addProduct }) => {
   return <div>
+      <button onClick={() => addProduct("New Product")}>ADD</button>
       <table class="table">
         <thead>
           <th>Index</th>
