@@ -1,6 +1,6 @@
 import React from "react"
 
-const ProductListTable = ({ products }) => {
+const ProductListTable = ({ products, removeProduct }) => {
   return <div>
       <table class="table">
         <thead>
@@ -10,10 +10,11 @@ const ProductListTable = ({ products }) => {
         </thead>
         {products.map((product, index) => <tr>
             {" "}
-            <td>{index}</td> <td>product</td>
+            <td>{index}</td> <td>{product}</td>
             <td>
-              <a href={"/productShow/" + index}>SHOW</a> |                             
-              <a href={"/productShow"}>DELETE</a>
+              <a href={"/productShow/" + index}>
+                SHOW
+              </a> |<button onClick={() => removeProduct(product)}>DELETE</button>
             </td>
           </tr>)}
       </table>
