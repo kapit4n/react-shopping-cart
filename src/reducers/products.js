@@ -20,6 +20,8 @@ function addToCart(state = initialState, action) {
 
 export function todoApp(state = initialState, action) {
   switch (action.type) {
+    case "SHOW_PRODUCT":
+      return { products: [...state.products, action.product], product: action.product, productShow: state.productShow, cartInfo: state.cartInfo };
     case "ADD_PRODUCT":
       return { products: [...state.products, action.product], product: state.product, productShow: state.productShow, cartInfo: state.cartInfo };
     case "REMOVE_PRODUCT":

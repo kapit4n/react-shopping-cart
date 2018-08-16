@@ -1,6 +1,6 @@
 import React from "react"
 
-const ProductListTable = ({ products, removeProduct, addProduct }) => {
+const ProductListTable = ({ products, removeProduct, addProduct, showProduct }) => {
   return <div>
       <button onClick={() => addProduct("New Product")}>ADD</button>
       <table class="table">
@@ -13,8 +13,8 @@ const ProductListTable = ({ products, removeProduct, addProduct }) => {
             {" "}
             <td>{index}</td> <td>{product}</td>
             <td>
-              <a href={"/productShow/" + index}>
-                SHOW
+          <a href={"/productShow/" + index} onClick = {() => showProduct(product)}>
+            SHOW
               </a> |<button onClick={() => removeProduct(product)}>DELETE</button>
             </td>
           </tr>)}
