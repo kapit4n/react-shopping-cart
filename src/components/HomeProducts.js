@@ -1,9 +1,9 @@
 import React from 'react';
 
 const HomeProducts = ({children}) => {
-    return <div>
+    return (<div>
         {children}
-      </div>;
+    </div>);
 }
 
 export default HomeProducts;

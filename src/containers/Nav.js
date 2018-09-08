@@ -6,7 +6,7 @@ import { searchProducts } from "../actions";
 
 class Nav extends React.Component {
     render() {
-        return <NavComponent>
+        return <NavComponent searchProducts={this.props.searchProducts}>
         </NavComponent>;
     }
 }

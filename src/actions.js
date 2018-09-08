@@ -21,6 +21,7 @@ export const addToCart = product => dispatch => {
   dispatch({ type: PRODUCT_TO_CART, product });
 }
 
+
 export const removeFromCart = index => dispatch => {
   dispatch({ type: REMOVE_FROM_CART, index });
 }
@@ -34,8 +35,9 @@ export const addProduct = product => dispatch => {
 }
 
 export const searchProducts = searchValue => dispatch => {
-         dispatch({ type: SEARCH_PRODUCT, searchValue });
-       };
+  console.log(searchValue);
+  dispatch({ type: SEARCH_PRODUCT, searchValue });
+};
 
 export const removeProduct = product => dispatch => {
   dispatch({ type: REMOVE_PRODUCT, product });

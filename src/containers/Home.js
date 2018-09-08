@@ -7,6 +7,7 @@ import ProductCard from "../components/ProductCard";
 
 class Home extends React.Component {
     render() {
+        
         return <HomeProducts>
             {this.props.products.map(product => (
               <ProductCard
@@ -19,8 +20,6 @@ class Home extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    console.log("MMMMMMMMMMMMMMMMMMMMMMMMMM");
-    console.log(state.products.todoApp.products);
     if (state) {
         return { products: state.products.todoApp.products };
     }
