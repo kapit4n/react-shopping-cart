@@ -27,8 +27,10 @@ export function todoApp(state = initialState, action) {
     case "REMOVE_PRODUCT":
       return { products: state.products.filter(pro => pro != action.product), product: state.product, productShow: state.productShow, cartInfo: state.cartInfo };
     case "REMOVE_FROM_CART":
-      return { products: state.products, product: state.product, productShow: state.productShow, cartInfo: { products: [...state.cartInfo.products.slice(0, action.index), ...state.cartInfo.products.slice(action.index  + 1)], total: state.cartInfo.total - 1 } };
+      return { products: state.products, product: state.product, productShow: state.productShow, cartInfo: { products: [...state.cartInfo.products.slice(0, action.index), ...state.cartInfo.products.slice(action.index + 1)], total: state.cartInfo.total - 1 } };
     case "PRODUCT_TO_CART":
+      return { products: state.products, product: state.product, productShow: state.productShow, cartInfo: { products: [...state.cartInfo.products, action.product], total: state.cartInfo.total + 1 } };
+    case "SEARCH_PRODUCT":
       return { products: state.products, product: state.product, productShow: state.productShow, cartInfo: { products: [...state.cartInfo.products, action.product], total: state.cartInfo.total + 1 } };
     default:
       return state;

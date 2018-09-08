@@ -2,7 +2,7 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import NavComponent from "../components/NavComponent"
-import { addToCart } from "../actions";
+import { searchProducts } from "../actions";
 
 class Nav extends React.Component {
     render() {
@@ -18,4 +18,7 @@ function mapStateToProps(state, ownProps) {
     return { products: [] }
 }
 
-export default connect(mapStateToProps, { addToCart })(Nav);
+export default connect(
+  mapStateToProps,
+  { searchProducts }
+)(Nav);
