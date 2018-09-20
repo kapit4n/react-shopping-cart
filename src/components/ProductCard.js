@@ -5,7 +5,7 @@ const ProductCard = ({addToCart, product}) => {
       <img class="card-img-top" src="https://comps.canstockphoto.com/product-stock-illustration_csp28697982.jpg" alt="Card image cap" />
       <div class="card-body">
         <h5 class="card-title" style={{ position: "absolute", top: "1px", color: "black", "font-size": "32px", background: "darkgrey", left: "0" }}>
-          {product}
+          {product.name}
         </h5>
         <button onClick={addToCart} class="btn btn-primary">
           Add to Cart

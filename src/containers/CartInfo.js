@@ -17,10 +17,10 @@ class CartInfo extends React.Component {
                   {this.props.cartInfo.products.map((product, index) => {
                     return <tr>
                         <td>{index}</td>
-                        <td>{product}</td>
-                        <td>{index * 2}</td>
+                        <td>{product.name}</td>
+                        <td>{product.quantity}</td>
                         <td>
-                        <button class="btn" onClick={() => this.props.removeFromCart(index)}>
+                          <button class="btn" onClick={() => this.props.removeFromCart(product)}>
                             X
                           </button>
                         </td>

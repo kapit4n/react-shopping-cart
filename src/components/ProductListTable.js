@@ -11,7 +11,7 @@ const ProductListTable = ({ products, removeProduct, addProduct, showProduct }) 
         </thead>
         {products.map((product, index) => <tr>
             {" "}
-            <td>{index}</td> <td>{product}</td>
+            <td>{index}</td> <td>{product.name}</td>
             <td>
           <a href={"/productShow/" + index} onClick = {() => showProduct(product)}>
             SHOW
