@@ -2,13 +2,13 @@ import { combineReducers } from "redux";
 
 const initialState = {
   products: [
-    { id: 1, name: "Product 1" },
-    { id: 2, name: "Product 2" },
-    { id: 3, name: "Product 3" }
+    { id: 1, name: "Product 1", price: 20 },
+    { id: 2, name: "Product 2", price: 30 },
+    { id: 3, name: "Product 3", price: 10 }
   ],
   product: "THis is the product",
   productShow: "THis is product displayed",
-  cartInfo: { products: [{ id: 1, name: "Product 1", quantity: 1 }], total: 1 }
+  cartInfo: { products: [{ id: 1, name: "Product 1", quantity: 1, price: 20 }], total: 1 }
 };
 
 function addToCart(state = initialState, action) {

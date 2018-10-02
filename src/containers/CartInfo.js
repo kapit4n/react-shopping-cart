@@ -8,17 +8,17 @@ class CartInfo extends React.Component {
       return <div>
                 <table className="table">
                   <tr>
-                    <th>Index</th>
                     <th>Name</th>
                     <th>Quantity</th>
+                    <th>Price</th>
                     <th>Action</th>
                   </tr>
                   <tbody>
                   {this.props.cartInfo.products.map((product, index) => {
                     return <tr>
-                        <td>{index}</td>
                         <td>{product.name}</td>
                         <td>{product.quantity}</td>
+                        <td>{product.price}</td>
                         <td>
                           <button class="btn" onClick={() => this.props.removeFromCart(product)}>
                             X
