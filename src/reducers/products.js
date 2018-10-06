@@ -6,9 +6,12 @@ const initialState = {
     { id: 2, name: "Product 2", price: 30 },
     { id: 3, name: "Product 3", price: 10 }
   ],
-  product: "THis is the product",
+  product: "This is the product",
   productShow: "THis is product displayed",
-  cartInfo: { products: [{ id: 1, name: "Product 1", quantity: 1, price: 20 }], total: 1 }
+  cartInfo: {
+    products: [{ id: 1, name: "Product 1", quantity: 1, price: 20 }],
+    total: 1*20
+  }
 };
 
 function addToCart(state = initialState, action) {
@@ -69,16 +72,24 @@ export function todoApp(state = initialState, action) {
           p => p.name == action.product.name
         );
         selected.quantity += 1;
+        const reducer = (accumulator, currentValue) => {
+          console.log(currentValue);
+          console.log(accumulator);
+          return accumulator + (Number(currentValue.quantity) * Number(currentValue.price));
+        };
         let noSelected = state.cartInfo.products.filter(
           p => p.name != action.product.name
         );
+        let totalAux = 0;
+        totalAux = state.cartInfo.products.reduce(reducer);
+        console.log(totalAux);
         return {
           products: state.products,
           product: state.product,
           productShow: state.productShow,
           cartInfo: {
             products: [...noSelected, selected],
-            total: state.cartInfo.total + 1
+            total: 10
           }
         };
       } else {
