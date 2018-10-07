@@ -30,6 +30,15 @@ function addToCart(state = initialState, action) {
 }
 
 export function todoApp(state = initialState, action) {
+  const reducer = (accumulator, currentValue) => {
+    if ((typeof accumulator) == "number") {
+      return accumulator + (Number(currentValue.quantity) * Number(currentValue.price));
+    } else {
+      return Number(accumulator.quantity) * Number(accumulator.price) + Number(currentValue.quantity) * Number(currentValue.price);
+    }
+  };
+  let cartTotal = 0;
+  
   switch (action.type) {
     case "SHOW_PRODUCT":
       return {
@@ -53,17 +62,15 @@ export function todoApp(state = initialState, action) {
         cartInfo: state.cartInfo
       };
     case "REMOVE_FROM_CART":
+      let cartProducts = [ ...state.cartInfo.products.filter( p => p.name != action.product.name ) ];
+      cartTotal = cartProducts.reduce(reducer);
       return {
         products: state.products,
         product: state.product,
         productShow: state.productShow,
         cartInfo: {
-          products: [
-            ...state.cartInfo.products.filter(
-              p => p.name != action.product.name
-            )
-          ],
-          total: state.cartInfo.total - action.product.quantity
+          products: cartProducts,
+          total: cartTotal
         }
       };
     case "PRODUCT_TO_CART":
@@ -72,36 +79,33 @@ export function todoApp(state = initialState, action) {
           p => p.name == action.product.name
         );
         selected.quantity += 1;
-        const reducer = (accumulator, currentValue) => {
-          console.log(currentValue);
-          console.log(accumulator);
-          return accumulator + (Number(currentValue.quantity) * Number(currentValue.price));
-        };
         let noSelected = state.cartInfo.products.filter(
           p => p.name != action.product.name
         );
-        let totalAux = 0;
-        totalAux = state.cartInfo.products.reduce(reducer);
-        console.log(totalAux);
+
+        let cartProducts = [...noSelected, selected];
+        cartTotal = cartProducts.reduce(reducer);
         return {
           products: state.products,
           product: state.product,
           productShow: state.productShow,
           cartInfo: {
-            products: [...noSelected, selected],
-            total: 10
+            products: cartProducts,
+            total: cartTotal
           }
         };
       } else {
         let p = action.product;
         p.quantity = 1;
+        let cartProducts = [...state.cartInfo.products, p];
+        cartTotal = cartProducts.reduce(reducer);
         return {
           products: state.products,
           product: state.product,
           productShow: state.productShow,
           cartInfo: {
-            products: [...state.cartInfo.products, p],
-            total: state.cartInfo.total + 1
+            products: cartProducts,
+            total: cartTotal
           }
         };
       }
