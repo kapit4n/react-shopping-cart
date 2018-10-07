@@ -15,13 +15,13 @@ class App extends Component {
       <header className="App-header col-md-12">
           <Nav></Nav>
         </header>
-      <div className="col-md-9" style={{ "margin-top": "20px" }}>
+      <div className="col-md-9" style={{ marginTop: "20px" }}>
           <Route exact path="/" component={Home} />
           <Route path="/products" component={ProductList} />
           <Route exact exact path="/productShow/:id" component={Product} />
         </div>
         <div className="col-md-3">
-        <div style={{"margin-top": "20px"}}>
+        <div style={{marginTop: "20px"}}>
             <CartInfo></CartInfo>
           </div>
         </div>
