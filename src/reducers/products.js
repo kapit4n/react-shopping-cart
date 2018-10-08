@@ -6,9 +6,12 @@ const initialState = {
     { id: 2, name: "Product 2", price: 30 },
     { id: 3, name: "Product 3", price: 10 }
   ],
-  product: "THis is the product",
+  product: "This is the product",
   productShow: "THis is product displayed",
-  cartInfo: { products: [{ id: 1, name: "Product 1", quantity: 1, price: 20 }], total: 1 }
+  cartInfo: {
+    products: [{ id: 1, name: "Product 1", quantity: 1, price: 20 }],
+    total: 1*20
+  }
 };
 
 function addToCart(state = initialState, action) {
@@ -27,6 +30,15 @@ function addToCart(state = initialState, action) {
 }
 
 export function todoApp(state = initialState, action) {
+  const reducer = (accumulator, currentValue) => {
+    if ((typeof accumulator) == "number") {
+      return accumulator + (Number(currentValue.quantity) * Number(currentValue.price));
+    } else {
+      return Number(accumulator.quantity) * Number(accumulator.price) + Number(currentValue.quantity) * Number(currentValue.price);
+    }
+  };
+  let cartTotal = 0;
+  
   switch (action.type) {
     case "SHOW_PRODUCT":
       return {
@@ -50,17 +62,15 @@ export function todoApp(state = initialState, action) {
         cartInfo: state.cartInfo
       };
     case "REMOVE_FROM_CART":
+      let cartProducts = [ ...state.cartInfo.products.filter( p => p.name != action.product.name ) ];
+      cartTotal = cartProducts.reduce(reducer);
       return {
         products: state.products,
         product: state.product,
         productShow: state.productShow,
         cartInfo: {
-          products: [
-            ...state.cartInfo.products.filter(
-              p => p.name != action.product.name
-            )
-          ],
-          total: state.cartInfo.total - action.product.quantity
+          products: cartProducts,
+          total: cartTotal
         }
       };
     case "PRODUCT_TO_CART":
@@ -72,25 +82,30 @@ export function todoApp(state = initialState, action) {
         let noSelected = state.cartInfo.products.filter(
           p => p.name != action.product.name
         );
+
+        let cartProducts = [...noSelected, selected];
+        cartTotal = cartProducts.reduce(reducer);
         return {
           products: state.products,
           product: state.product,
           productShow: state.productShow,
           cartInfo: {
-            products: [...noSelected, selected],
-            total: state.cartInfo.total + 1
+            products: cartProducts,
+            total: cartTotal
           }
         };
       } else {
         let p = action.product;
         p.quantity = 1;
+        let cartProducts = [...state.cartInfo.products, p];
+        cartTotal = cartProducts.reduce(reducer);
         return {
           products: state.products,
           product: state.product,
           productShow: state.productShow,
           cartInfo: {
-            products: [...state.cartInfo.products, p],
-            total: state.cartInfo.total + 1
+            products: cartProducts,
+            total: cartTotal
           }
         };
       }

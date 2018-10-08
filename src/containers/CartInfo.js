@@ -7,20 +7,22 @@ class CartInfo extends React.Component {
     render() {
       return <div>
                 <table className="table">
+                  <thead>
                   <tr>
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Action</th>
                   </tr>
+                  </thead>
                   <tbody>
                   {this.props.cartInfo.products.map((product, index) => {
-                    return <tr>
+                    return <tr key={index}>
                         <td>{product.name}</td>
                         <td>{product.quantity}</td>
                         <td>{product.price}</td>
                         <td>
-                          <button class="btn" onClick={() => this.props.removeFromCart(product)}>
+                          <button className="btn" onClick={() => this.props.removeFromCart(product)}>
                             X
                           </button>
                         </td>

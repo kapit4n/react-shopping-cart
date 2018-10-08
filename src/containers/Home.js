@@ -10,10 +10,7 @@ class Home extends React.Component {
         
         return <HomeProducts>
             {this.props.products.map(product => (
-              <ProductCard
-                addToCart={() => this.props.addToCart(product)}
-                product={product}
-              />
+              <ProductCard addToCart={() => this.props.addToCart(product)} product={product} key={product.id} />
             ))}
           </HomeProducts>;
     }
