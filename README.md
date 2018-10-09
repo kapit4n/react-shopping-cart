@@ -1,4 +1,4 @@
-![Home](https://raw.githubusercontent.com/kapit4n/nextTravel/master/mockups/next-travel-home.png)
+![Home](https://raw.githubusercontent.com/kapit4n/react-2seller/develop/mockups/react2-seller-home02.png)
 
 ## Available Scripts
 ### `npm start`
