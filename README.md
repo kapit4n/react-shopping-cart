@@ -1,3 +1,6 @@
+![Home](https://raw.githubusercontent.com/kapit4n/react-2seller/develop/mockups/react2-seller-home02.png)
+
+
 ## Folder Structure
 
 After creation, your project should look like this:
