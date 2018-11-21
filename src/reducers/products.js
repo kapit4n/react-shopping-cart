@@ -148,7 +148,11 @@ export function todoApp(state = initialState, action) {
       };
     case "REMOVE_FROM_CART":
       let cartProducts = [ ...state.cartInfo.products.filter( p => p.name != action.product.name ) ];
-      cartTotal = cartProducts.reduce(reducer);
+      if (cartProducts.length > 1) {
+        cartTotal = cartProducts.reduce(reducer);
+      } else if (cartProducts.length == 1) {
+        cartTotal = Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
+      }
       return {
         products: state.products,
         product: state.product,
@@ -169,7 +173,11 @@ export function todoApp(state = initialState, action) {
         );
 
         let cartProducts = [...noSelected, selected];
-        cartTotal = cartProducts.reduce(reducer);
+        if (cartProducts.length > 1) {
+          cartTotal = cartProducts.reduce(reducer);
+        } else if (cartProducts.length == 1) {
+          cartTotal = Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
+        }
         return {
           products: state.products,
           product: state.product,
@@ -183,16 +191,12 @@ export function todoApp(state = initialState, action) {
         let p = action.product;
         p.quantity = 1;
         let cartProducts = [...state.cartInfo.products, p];
-        cartTotal = cartProducts.reduce(reducer);
-        return {
-          products: state.products,
-          product: state.product,
-          productShow: state.productShow,
-          cartInfo: {
-            products: cartProducts,
-            total: cartTotal
-          }
-        };
+        if (cartProducts.length > 1) {
+          cartTotal = cartProducts.reduce(reducer);
+        } else if (cartProducts.length == 1) {
+          cartTotal = Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
+        } 
+        return { products: state.products, product: state.product, productShow: state.productShow, cartInfo: { products: cartProducts, total: cartTotal } };
       }
     case "SEARCH_PRODUCT":
       return {
