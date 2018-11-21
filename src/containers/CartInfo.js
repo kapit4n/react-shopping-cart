@@ -32,7 +32,6 @@ class CartInfo extends React.Component {
                 </table>
                 <div>
                   Total: {this.props.cartInfo.total}
-                <button ></button>
                 </div>
             </div>
     }
