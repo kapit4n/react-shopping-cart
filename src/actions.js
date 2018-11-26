@@ -12,6 +12,7 @@ const initialState = {
     "Product 7",
     "Product 8"
   ],
+  productsOriginal: [],
   product: "THis is the product",
   productShow: "THis is product displayed",
   cartInfo: { products: ["product2", "product3"], total: 2 }
@@ -27,6 +28,7 @@ export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
 export const SHOW_PRODUCT = "SHOW_PRODUCT";
 
 export const addToCart = product => dispatch => {
+  
   dispatch({ type: PRODUCT_TO_CART, product });
 };
 

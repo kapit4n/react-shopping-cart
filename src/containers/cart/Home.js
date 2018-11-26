@@ -22,7 +22,9 @@ class Home extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   if (state) {
-    return { products: state.products.todoApp.products };
+    return {
+      products: state.products.todoApp.products
+    };
   }
   return { products: [] };
 }
