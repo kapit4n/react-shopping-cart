@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 import { Link } from "react-router-dom";
 
-const NavComponent = ({ searchProducts }) => {
+const NavComponent = ({ searchProducts, updateInput }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
-        Navbar
+        2 Seller
       </a>
       <button
         className="navbar-toggler"
@@ -20,7 +20,7 @@ const NavComponent = ({ searchProducts }) => {
       </button>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav mr-auto" style={{ display: "none" }}>
           <li className="nav-item active">
             <Link to="/" className="nav-link" replace>
               {" "}
@@ -39,10 +39,11 @@ const NavComponent = ({ searchProducts }) => {
             type="search"
             placeholder="Search"
             aria-label="Search"
+            onChange={updateInput}
           />
           <button
             className="btn btn-outline-success my-2 my-sm-0"
-            onClick={() => searchProducts("SearchText")}
+            onClick={searchProducts}
           >
             Search
           </button>
