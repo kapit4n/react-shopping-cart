@@ -1,4 +1,4 @@
-![Home](https://raw.githubusercontent.com/kapit4n/react-2seller/develop/mockups/react2-seller-home03.png
+![Home](https://raw.githubusercontent.com/kapit4n/react-2seller/develop/mockups/react2-seller-home03.png)
 
 ## Available Scripts
 
