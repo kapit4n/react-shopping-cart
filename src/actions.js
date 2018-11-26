@@ -2,7 +2,16 @@ export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
 
 const initialState = {
   visibilityFilter: "SHOW_ALL",
-  products: ["Product 1", "Product 2", "Product 3", "Product 4", "Product 5", "Product 6", "Product 7", "Product 8"],
+  products: [
+    "Product 1",
+    "Product 2",
+    "Product 3",
+    "Product 4",
+    "Product 5",
+    "Product 6",
+    "Product 7",
+    "Product 8"
+  ],
   product: "THis is the product",
   productShow: "THis is product displayed",
   cartInfo: { products: ["product2", "product3"], total: 2 }
@@ -19,28 +28,27 @@ export const SHOW_PRODUCT = "SHOW_PRODUCT";
 
 export const addToCart = product => dispatch => {
   dispatch({ type: PRODUCT_TO_CART, product });
-}
+};
 
 export const removeFromCart = product => dispatch => {
   dispatch({ type: REMOVE_FROM_CART, product });
-}
+};
 
 export const showProduct = product => dispatch => {
   dispatch({ type: SHOW_PRODUCT, product });
-}
+};
 
 export const addProduct = product => dispatch => {
   dispatch({ type: ADD_PRODUCT, product });
-}
+};
 
 export const searchProducts = searchValue => dispatch => {
-  console.log(searchValue);
   dispatch({ type: SEARCH_PRODUCT, searchValue });
 };
 
 export const removeProduct = product => dispatch => {
   dispatch({ type: REMOVE_PRODUCT, product });
-}
+};
 
 const receiveProducts = products => ({
   type: SHOW_ALL,

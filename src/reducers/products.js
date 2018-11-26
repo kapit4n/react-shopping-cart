@@ -116,14 +116,19 @@ function addToCart(state = initialState, action) {
 
 export function todoApp(state = initialState, action) {
   const reducer = (accumulator, currentValue) => {
-    if ((typeof accumulator) == "number") {
-      return accumulator + (Number(currentValue.quantity) * Number(currentValue.price));
+    if (typeof accumulator == "number") {
+      return (
+        accumulator + Number(currentValue.quantity) * Number(currentValue.price)
+      );
     } else {
-      return Number(accumulator.quantity) * Number(accumulator.price) + Number(currentValue.quantity) * Number(currentValue.price);
+      return (
+        Number(accumulator.quantity) * Number(accumulator.price) +
+        Number(currentValue.quantity) * Number(currentValue.price)
+      );
     }
   };
   let cartTotal = 0;
-  
+
   switch (action.type) {
     case "SHOW_PRODUCT":
       return {
@@ -147,11 +152,14 @@ export function todoApp(state = initialState, action) {
         cartInfo: state.cartInfo
       };
     case "REMOVE_FROM_CART":
-      let cartProducts = [ ...state.cartInfo.products.filter( p => p.name != action.product.name ) ];
+      let cartProducts = [
+        ...state.cartInfo.products.filter(p => p.name != action.product.name)
+      ];
       if (cartProducts.length > 1) {
         cartTotal = cartProducts.reduce(reducer);
       } else if (cartProducts.length == 1) {
-        cartTotal = Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
+        cartTotal =
+          Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
       }
       return {
         products: state.products,
@@ -176,7 +184,8 @@ export function todoApp(state = initialState, action) {
         if (cartProducts.length > 1) {
           cartTotal = cartProducts.reduce(reducer);
         } else if (cartProducts.length == 1) {
-          cartTotal = Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
+          cartTotal =
+            Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
         }
         return {
           products: state.products,
@@ -194,13 +203,21 @@ export function todoApp(state = initialState, action) {
         if (cartProducts.length > 1) {
           cartTotal = cartProducts.reduce(reducer);
         } else if (cartProducts.length == 1) {
-          cartTotal = Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
-        } 
-        return { products: state.products, product: state.product, productShow: state.productShow, cartInfo: { products: cartProducts, total: cartTotal } };
+          cartTotal =
+            Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
+        }
+        return {
+          products: state.products,
+          product: state.product,
+          productShow: state.productShow,
+          cartInfo: { products: cartProducts, total: cartTotal }
+        };
       }
     case "SEARCH_PRODUCT":
       return {
-        products: state.products.filter(p => p == action.searchValue),
+        products: state.products.filter(p =>
+          p.name.includes(action.searchValue)
+        ),
         product: state.product,
         productShow: state.productShow,
         cartInfo: {
