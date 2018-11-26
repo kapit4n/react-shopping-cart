@@ -1,8 +1,8 @@
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import NavComponent from "../components/NavComponent"
-import { searchProducts } from "../actions";
+import NavComponent from "../../components/cart/NavComponent"
+import { searchProducts } from "../../actions";
 
 class Nav extends React.Component {
     render() {

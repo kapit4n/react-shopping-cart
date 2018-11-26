@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import HomeProducts from "../components/HomeProducts";
-import { addToCart } from "../actions";
-import ProductCard from "../components/ProductCard";
+import HomeProducts from "../../components/cart/HomeProducts";
+import { addToCart } from "../../actions";
+import ProductCard from "../../components/cart/ProductCard";
 
 class Home extends React.Component {
   render() {
