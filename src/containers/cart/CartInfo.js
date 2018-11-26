@@ -1,7 +1,7 @@
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import { removeFromCart } from "../actions";
+import { removeFromCart } from "../../actions";
 
 class CartInfo extends React.Component {
     render() {

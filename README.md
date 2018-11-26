@@ -1,6 +1,7 @@
-![Home](https://raw.githubusercontent.com/kapit4n/react-2seller/develop/mockups/react2-seller-home02.png)
+![Home](https://raw.githubusercontent.com/kapit4n/react-2seller/develop/mockups/react2-seller-home03.png)
 
 ## Available Scripts
+
 ### `npm start`
 
 Runs the app in the development mode.<br>

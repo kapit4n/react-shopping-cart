@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductList from "./containers/ProductList";
 import Product from "./containers/Product";
-import Home from "./containers/Home";
-import Nav from "./containers/Nav"
-import CartInfo from "./containers/CartInfo"
+import Home from "./containers/cart/Home";
+import Nav from "./containers/cart/Nav"
+import CartInfo from "./containers/cart/CartInfo"
 
 class App extends Component {
   render() {
