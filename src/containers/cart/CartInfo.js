@@ -1,7 +1,7 @@
 import React from "react";
-import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import { removeFromCart } from "../../actions";
+import { checkoutCart } from "../../actions";
 
 class CartInfo extends React.Component {
     render() {
@@ -33,6 +33,9 @@ class CartInfo extends React.Component {
                 <div>
                   Total: {this.props.cartInfo.total}
                 </div>
+                <div>
+                  <button onClick={() => this.props.checkoutCart(this.props.cartInfo.products)}>CHECKOUT</button>
+                </div>
             </div>
     }
 }
@@ -44,5 +47,5 @@ function mapStateToProps(state, ownProps) {
 
 export default connect(
   mapStateToProps,
-  { removeFromCart }
+  { removeFromCart, checkoutCart }
 )(CartInfo);
