@@ -170,6 +170,16 @@ export function todoApp(state = initialState, action) {
           total: cartTotal
         }
       };
+    case "CHECKOUT_CART":
+      return {
+        products: state.products,
+        product: state.product,
+        productShow: state.productShow,
+        cartInfo: {
+          products: [],
+          total: 0
+        }
+      };
     case "PRODUCT_TO_CART":
       if (state.cartInfo.products.some(p => p.name == action.product.name)) {
         let selected = state.cartInfo.products.find(
