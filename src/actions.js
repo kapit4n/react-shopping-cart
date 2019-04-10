@@ -5,9 +5,6 @@ const initialState = {
   products: [
     "Product 1",
     "Product 2",
-    "Product 3",
-    "Product 4",
-    "Product 5",
     "Product 6",
     "Product 7",
     "Product 8"
@@ -22,6 +19,7 @@ export const SHOW_ALL = "SHOW_ALL";
 
 export const PRODUCT_TO_CART = "PRODUCT_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const CHECKOUT_CART = "CHECKOUT_CART";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
@@ -35,6 +33,10 @@ export const addToCart = product => dispatch => {
 export const removeFromCart = product => dispatch => {
   dispatch({ type: REMOVE_FROM_CART, product });
 };
+
+export const checkoutCart = products => dispatch => {
+  dispatch({type: CHECKOUT_CART, products})
+}
 
 export const showProduct = product => dispatch => {
   dispatch({ type: SHOW_PRODUCT, product });
