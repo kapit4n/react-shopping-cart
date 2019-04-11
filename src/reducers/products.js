@@ -134,7 +134,7 @@ export function todoApp(state = initialState, action) {
       return {
         products: [...state.products, action.product],
         product: action.product,
-        productShow: state.productShow,
+        productShow: action.product,
         cartInfo: state.cartInfo
       };
     case "ADD_PRODUCT":

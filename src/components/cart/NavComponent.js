@@ -19,25 +19,25 @@ const NavComponent = ({ searchProducts, updateInput }) => {
         <span className="navbar-toggler-icon" />
       </button>
 
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto" style={{ display: "none" }}>
-          <li className="nav-item active">
-            <Link to="/" className="nav-link" replace>
-              {" "}
-              Home <span className="sr-only">(current)</span>
-            </Link>
-          </li>
-          <li>
-            <Link className="nav-link" to="/products">
-              Products
-            </Link>
-          </li>
-        </ul>
+      <div className="" id="navbarSupportedContent">
+
         <div className="form-inline my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <Link to="/">
+              Home
+              </Link>
+            </li>
+            <li class="nav-item">
+            <Link to="/products">
+              Products
+              </Link>
+            </li>            
+          </ul>
           <input
             className="form-control mr-sm-2"
             type="search"
-            placeholder="Search"
+            placeholder="SearchXX"
             aria-label="Search"
             onChange={updateInput}
           />
