@@ -6,13 +6,13 @@ import { checkoutCart } from "../../actions";
 class CartInfo extends React.Component {
     render() {
       return <div>
-                <table className="table">
+                <table className="table" style={{border: "5px solid red"}}>
                   <thead>
                   <tr>
                     <th>Name</th>
-                    <th>Quantity</th>
+                    <th>Qty</th>
                     <th>Price</th>
-                    <th>Action</th>
+                    <th></th>
                   </tr>
                   </thead>
                   <tbody>

@@ -37,7 +37,7 @@ const NavComponent = ({ searchProducts, updateInput }) => {
           <input
             className="form-control mr-sm-2"
             type="search"
-            placeholder="SearchXX"
+            placeholder="Item Name"
             aria-label="Search"
             onChange={updateInput}
           />
