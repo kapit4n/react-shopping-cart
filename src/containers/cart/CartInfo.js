@@ -5,8 +5,8 @@ import { checkoutCart } from "../../actions";
 
 class CartInfo extends React.Component {
     render() {
-      return <div>
-                <table className="table" style={{border: "5px solid red"}}>
+      return <div className="card-info">
+                <table className="table" style={{border: "5px solid green"}}>
                   <thead>
                   <tr>
                     <th>Name</th>
