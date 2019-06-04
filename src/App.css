@@ -33,7 +33,7 @@
 
 @media only screen and (min-width: 768px) {
   .card-info {
-    display: block;
+    display: inline-flex;
   }  
 }
 
@@ -46,4 +46,18 @@
     display: none;
   }  
 }
+
+.product-card {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-card {
+    width: 10rem;
+    display: inline-flex;
+  }  
+}
+
+
+
 

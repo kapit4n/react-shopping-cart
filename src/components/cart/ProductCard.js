@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProductCard = ({addToCart, product}) => {
-  return <div className="card" style={{ display: "inline-flex", borderWidth: "5px", borderStyle: "solid", 
+  return <div className="card product-card" style={{ borderWidth: "5px", borderStyle: "solid", 
                                       boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
       <img className="card-img-top" src={product.img} alt="Card image cap" />
       <div className="card-body">

@@ -19,7 +19,7 @@ class App extends Component {
             </Link>
           </Nav>
         </header>
-        <div className="col-md-4">
+        <div className="col-md-4 card-info-mobile">
           <div style={{ marginTop: "20px" }}>
             <CartInfoMobile />
           </div>
