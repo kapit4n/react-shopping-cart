@@ -34,10 +34,7 @@ class App extends Component {
           <div style={{ marginTop: "20px" }}>
             <CartInfo />
           </div>
-          
         </div>
-        
-
       </div>
     );
   }

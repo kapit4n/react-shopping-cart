@@ -6,51 +6,61 @@ import { checkoutCart } from "../../actions";
 class CartInfoMobile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {display: false};
+    this.state = { display: true };
+    this.toogle = this.toogle.bind(this);
   }
+
+  toogle() {
+    this.setState({ display: !this.state.display })
+  }
+
   render() {
     return (
       <div className="card-info-mobile">
-        <div>Total: {this.props.cartInfo.total}</div>
-        <div>
-          <button
-            onClick={() =>
-              this.props.checkoutCart(this.props.cartInfo.products)
-            }
-          >
-            CHECKOUT
+        <button onClick={this.toogle} >Cart Info</button>
+        <div style={{ border: "5px solid green", display: this.state.display ? 'block' : 'none' }}>
+          <div>TotalM: {this.props.cartInfo.total}</div>
+          <div>
+            <button
+              onClick={() =>
+                this.props.checkoutCart(this.props.cartInfo.products)
+              }
+            >
+              CHECKOUT
           </button>
+          </div>
+
+          <table className="table">
+            <thead>
+              <tr>
+                <th>NameM</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th />
+              </tr>
+            </thead>
+            <tbody>
+              {this.props.cartInfo.products.map((product, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{product.name}</td>
+                    <td>{product.quantity}</td>
+                    <td>{product.price}</td>
+                    <td>
+                      <button
+                        className="btn"
+                        onClick={() => this.props.removeFromCart(product)}
+                      >
+                        X
+                    </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
 
-        <table className="table" style={{ border: "5px solid green", display: this.state.display? 'block': 'none' }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Qty</th>
-              <th>Price</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.cartInfo.products.map((product, index) => {
-              return (
-                <tr key={index}>
-                  <td>{product.name}</td>
-                  <td>{product.quantity}</td>
-                  <td>{product.price}</td>
-                  <td>
-                    <button
-                      className="btn"
-                      onClick={() => this.props.removeFromCart(product)}
-                    >
-                      X
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
       </div>
     );
   }
