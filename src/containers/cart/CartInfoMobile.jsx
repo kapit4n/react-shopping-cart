@@ -17,7 +17,7 @@ class CartInfoMobile extends React.Component {
   render() {
     return (
       <div className="card-info-mobile">
-        <button onClick={this.toogle} >Cart Info</button>
+        <button onClick={this.toogle}>Cart Info</button>
         <div style={{ border: "5px solid green", display: this.state.display ? 'block' : 'none' }}>
           <div>TotalM: {this.props.cartInfo.total}</div>
           <div>
