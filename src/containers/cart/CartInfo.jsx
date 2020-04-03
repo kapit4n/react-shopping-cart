@@ -6,30 +6,16 @@ import { checkoutCart } from "../../actions";
 class CartInfo extends React.Component {
   render() {
     return <div className="card-info">
-      <table className="table" style={{ border: "1px solid", width: '100%' }}>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.props.cartInfo.products.map((product, index) => {
-            return <tr key={index}>
-              <td>{product.name}</td>
-              <td>{product.quantity}</td>
-              <td>{product.price}</td>
-              <td>
-                <button className="btn" onClick={() => this.props.removeFromCart(product)}>
-                  X
-                          </button>
-              </td>
-            </tr>;
-          })}
-        </tbody>
-      </table>
+      {this.props.cartInfo.products.map((product, index) => {
+        return (<div key={index} style={{ width: '100%', display: 'flex', margin: '0.3rem', backgroundColor: '#cdd1ce' }}>
+          <img style={{ width: 100 }} src={product.img} alt="Card image cap" />
+          <div style={{ display: 'flex', flexDirection: 'column', padding: '0.5rem' }}>
+            <span style={{ fontWeight: 'bold' }}>{product.name}</span>
+            <span>{product.quantity * product.price}</span>
+            <button className="btn" onClick={() => this.props.removeFromCart(product)}> X </button>
+          </div>
+        </div>)
+      })}
       <div>
         Total: {this.props.cartInfo.total}
       </div>

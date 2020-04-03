@@ -23,17 +23,18 @@ class App extends Component {
           <div style={{ marginTop: "20px" }}>
             <CartInfoMobile />
           </div>
-          
+
+        </div>
+
+        <div className="col-md-4">
+          <div style={{ marginTop: "20px" }}>
+            <CartInfo />
+          </div>
         </div>
         <div className="col-md-8" style={{ marginTop: "20px" }}>
           <Route exact path="/" component={Home} />
           <Route path="/products" component={ProductList} />
           <Route exact exact path="/productShow/:id" component={Product} />
-        </div>
-        <div className="col-md-4">
-          <div style={{ marginTop: "20px" }}>
-            <CartInfo />
-          </div>
         </div>
       </div>
     );

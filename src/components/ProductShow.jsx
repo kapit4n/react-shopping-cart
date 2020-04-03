@@ -9,7 +9,6 @@ const ProductShow = ({ product, productId }) => {
       <dd>
         <img src={product.img} style={{ width: '400px' }} />
       </dd>
-
       <dt>Details</dt>
       <dd>
         <ul>

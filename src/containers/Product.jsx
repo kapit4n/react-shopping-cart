@@ -11,10 +11,8 @@ class Product extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    console.log("XXXXXXXXXXXX");
-    console.log(state.products.todoApp.productShow);
-    
-    return { productShow: state.products.todoApp.productShow };
+    const { productShow} = state.products.todoApp;
+    return { productShow };
 }
 
 function mapDispathProps(dispatch) {
