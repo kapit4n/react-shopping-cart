@@ -19,10 +19,11 @@ class App extends Component {
         </div> */}
         <Nav> </Nav>
         <div style={{ width: "100%", height: '100px', zIndex: '-4' }}>
-          <img style={{ width: "100%", objectFit: 'cover', marginTop: '-10rem' }} src="https://di-uploads-pod19.dealerinspire.com/universitycjdr/uploads/2019/08/2018-Jeep-Wrangler-Unlimited-banner.png" />
+          <img style={{ width: "100%", objectFit: 'cover', marginTop: '-10rem' }} 
+              src="https://di-uploads-pod19.dealerinspire.com/universitycjdr/uploads/2019/08/2018-Jeep-Wrangler-Unlimited-banner.png" />
         </div>
 
-        <div className="row" style={{ backgroundColor: 'rgb(240, 240, 245)', margin: 0 }}>
+        <div className="row" style={{ backgroundColor: 'rgb(240, 240, 245)', margin: 0, width: '100%' }}>
           <div className="col-md-4">
             <div style={{ marginTop: "20px", boxShadow: '4px 5px 20px -7px rgba(117,77,117,1)' }}>
               <CartInfo />
