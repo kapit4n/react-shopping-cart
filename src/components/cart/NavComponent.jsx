@@ -28,10 +28,10 @@ const NavComponent = ({ searchProducts, updateInput }) => {
         </div>
       </div>
 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{
-        justifyContent: 'space-between', width: '100%', display: 'flex'
+      <nav className="navbar navbar-expand-lg" style={{
+        justifyContent: 'space-between', width: '100%', display: 'flex', backgroundColor: '#001a33', color: '#ffffff'
       }}>
-        < a className="navbar-brand" href="#" >
+        < a className="navbar-brand" href="#" style={{ color: '#ffffff' }}>
           2 Seller
       </a >
         <button

@@ -8,13 +8,16 @@ class Home extends React.Component {
   render() {
     return (
       <HomeProducts>
-        {this.props.products.map(product => (
-          <ProductCard
-            addToCart={() => this.props.addToCart(product)}
-            product={product}
-            key={product.id}
-          />
-        ))}
+        <h2>Products</h2>
+        <div style={{ marginTop: '1rem' }}>
+          {this.props.products.map(product => (
+            <ProductCard
+              addToCart={() => this.props.addToCart(product)}
+              product={product}
+              key={product.id}
+            />
+          ))}
+        </div>
       </HomeProducts>
     );
   }

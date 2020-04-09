@@ -7,7 +7,7 @@ class CartInfo extends React.Component {
   render() {
     return <div className="card-info">
       {this.props.cartInfo.products.map((product, index) => {
-        return (<div key={index} style={{ width: '100%', display: 'flex', margin: '0.3rem', backgroundColor: '#cdd1ce' }}>
+        return (<div key={index} style={{ width: '100%', display: 'flex', margin: '0.2rem 0', backgroundColor: '#cdd1ce' }}>
           <img style={{ width: 100 }} src={product.img} alt="Card image cap" />
           <div style={{ display: 'flex', flexDirection: 'column', padding: '0.5rem' }}>
             <span style={{ fontWeight: 'bold' }}>{product.name}</span>
