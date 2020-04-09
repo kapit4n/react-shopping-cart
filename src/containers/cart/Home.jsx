@@ -8,7 +8,7 @@ class Home extends React.Component {
   render() {
     return (
       <HomeProducts>
-        <h2>Products</h2>
+        <h2 style={{ display: 'flex', justifyContent: 'center', background: 'rgb(209, 209, 224)' }}>Products</h2>
         <div style={{ marginTop: '1rem' }}>
           {this.props.products.map(product => (
             <ProductCard
