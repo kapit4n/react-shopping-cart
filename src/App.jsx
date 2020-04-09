@@ -12,29 +12,23 @@ class App extends Component {
   render() {
     return (
       <div className="App row">
-        <header className="App-header col-md-12">
-          <Nav>
-            <Link to="products">
-              <button>Go to Products</button>
-            </Link>
-          </Nav>
-        </header>
-        <div className="col-md-4 card-info-mobile">
+        <Nav> </Nav>
+        {/* <div className="col-md-4 card-info-mobile">
           <div style={{ marginTop: "20px" }}>
             <CartInfoMobile />
           </div>
-
-        </div>
-
-        <div className="col-md-4">
-          <div style={{ marginTop: "20px" }}>
-            <CartInfo />
+        </div> */}
+        <div className="row">
+          <div className="col-md-4">
+            <div style={{ marginTop: "20px" }}>
+              <CartInfo />
+            </div>
           </div>
-        </div>
-        <div className="col-md-8" style={{ marginTop: "20px" }}>
-          <Route exact path="/" component={Home} />
-          <Route path="/products" component={ProductList} />
-          <Route exact exact path="/productShow/:id" component={Product} />
+          <div className="col-md-8" style={{ marginTop: "20px" }}>
+            <Route exact path="/" component={Home} />
+            <Route path="/products" component={ProductList} />
+            <Route exact exact path="/productShow/:id" component={Product} />
+          </div>
         </div>
       </div>
     );
