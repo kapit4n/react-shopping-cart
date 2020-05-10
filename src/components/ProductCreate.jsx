@@ -26,7 +26,7 @@ function ProductCreate({ addProduct, history }) {
       <dt>Name</dt>
       <dd><input type="text" name="name" ref={register} /></dd>
       <dt>Price</dt>
-      <dd><input type="text" name="price" ref={register} /></dd>
+      <dd><input type="number" name="price" ref={register} /></dd>
       <dt>Image</dt>
       <dd><input type="text" name="img" ref={register} /></dd>
       <dt>Description</dt>

@@ -1,5 +1,4 @@
 import React from "react";
-import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
 import { addProduct } from "../actions";
 import ProductCreateComp from "../components/ProductCreate"
@@ -7,8 +6,6 @@ import ProductCreateComp from "../components/ProductCreate"
 class ProductCreate extends React.Component {
     constructor(props) {
         super(props);
-        console.log("props");
-        console.log(props);
     }
 
     render() {

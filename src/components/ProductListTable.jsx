@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 const ProductListTable = ({ products, removeProduct, addProduct, showProduct }) => {
   return <div>
-    <Link to={"/productCreate"}> <button> CREATE </button> </Link>
+    <div style={{ width: '100%', display: 'flex', margin: '1rem 0', flexDirection: 'flex-start' }}>
+      <Link to={"/productCreate"}> <button> CREATE </button> </Link>
+
+    </div>
     <table class="table">
       <thead>
         <th>Index</th>
@@ -17,9 +20,9 @@ const ProductListTable = ({ products, removeProduct, addProduct, showProduct }) 
           <Link to={"/productShow/" + index}>
             <button onClick={() => showProduct(product)} >
               SHOW
-              </button>
+            </button>
           </Link>
-          |<button onClick={() => removeProduct(product)}>DELETE</button>
+          <button style={{ marginLeft: '1rem' }} onClick={() => removeProduct(product)}>DELETE</button>
         </td>
       </tr>)}
     </table>

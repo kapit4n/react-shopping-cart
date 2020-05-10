@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavComponent = ({ searchProducts, updateInput, total }) => {
   return (
-    <div style={{ width: '100%' }}>
+    <div style={{ width: '100%', backgroundColor: 'rgba(218, 225, 237, 0.3)' }}>
       <div style={{ width: '100%', display: 'flex' }}>
         <input
           className="form-control mr-sm-2"

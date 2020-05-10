@@ -1,21 +1,18 @@
 import React from "react";
 
 const ProductShow = ({ product, productId }) => {
-  return <div class="card container" style={{ "border-width": "5px", "border-style": "solid" }}>
-    <dl>
+  return <div style={{ width: '100%' }}>
+    <dl style={{ textAlign: 'left' }}>
       <dt>Name</dt>
       <dd>{product.name}</dd>
       <dt>Image</dt>
       <dd>
-        <img src={product.img} style={{ width: '400px' }} />
+        <img src={product.img} style={{ width: '20rem' }} />
       </dd>
       <dt>Details</dt>
       <dd>
-        <ul>
-          <li>{product.description} </li>
-        </ul>
+        {product.description}
       </dd>
-
     </dl>
   </div>;
 }
