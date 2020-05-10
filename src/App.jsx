@@ -5,18 +5,12 @@ import ProductList from "./containers/ProductList";
 import Product from "./containers/Product";
 import Home from "./containers/cart/Home";
 import Nav from "./containers/cart/Nav";
-import CartInfo from "./containers/cart/CartInfo";
 
 class App extends Component {
   render() {
     return (
       <div className="App row">
 
-        {/* <div className="col-md-4 card-info-mobile">
-          <div style={{ marginTop: "20px" }}>
-            <CartInfoMobile />
-          </div>
-        </div> */}
         <Nav> </Nav>
         <div style={{ width: "100%", height: '100px', zIndex: '-4' }}>
           <img style={{ width: "100%", objectFit: 'cover', marginTop: '-10rem' }} 
@@ -24,12 +18,7 @@ class App extends Component {
         </div>
 
         <div className="row" style={{ backgroundColor: 'rgb(240, 240, 245)', margin: 0, width: '100%' }}>
-          <div className="col-md-4">
-            <div style={{ marginTop: "20px", boxShadow: '4px 5px 20px -7px rgba(117,77,117,1)' }}>
-              <CartInfo />
-            </div>
-          </div>
-          <div className="col-md-8" style={{ marginTop: "20px" }}>
+          <div className="col-md-12" style={{ marginTop: "20px" }}>
             <Route exact path="/" component={Home} />
             <Route path="/products" component={ProductList} />
             <Route exact exact path="/productShow/:id" component={Product} />
