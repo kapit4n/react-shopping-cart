@@ -8,7 +8,8 @@ class Nav extends React.Component {
     super(props);
 
     this.state = {
-      searchText: ""
+      searchText: "",
+      total: props.total
     };
 
     this.updateInput = this.updateInput.bind(this);
@@ -27,6 +28,7 @@ class Nav extends React.Component {
     return (
       <NavComponent
         searchProducts={this.handleSubmitSearch}
+        total={this.props.total}
         updateInput={this.updateInput}
       />
     );
@@ -35,9 +37,12 @@ class Nav extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   if (state) {
-    return { products: state.products.todoApp.products };
+    console.log("state NAV");
+    console.log(state);
+
+    return { total: state.products.todoApp.cartInfo.total };
   }
-  return { products: [] };
+  return { total: 0 };
 }
 
 export default connect(

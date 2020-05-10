@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavComponent = ({ searchProducts, updateInput }) => {
+const NavComponent = ({ searchProducts, updateInput, total }) => {
   return (
     <div style={{ width: '100%' }}>
       <div style={{ width: '100%', display: 'flex' }}>
@@ -24,7 +24,7 @@ const NavComponent = ({ searchProducts, updateInput }) => {
         <span style={{ padding: '1rem', color: 'black' }}>Cart</span>
         <div>
           <img src="https://findicons.com/files/icons/1579/devine/256/cart.png" height={20} />
-          <span style={{ padding: '0.3rem', color: 'black' }}>($2000)</span>
+          <span style={{ padding: '0.3rem', color: 'black' }}>(${total})</span>
         </div>
       </div>
 
