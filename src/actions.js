@@ -34,14 +34,17 @@ export const removeFromCart = product => dispatch => {
 };
 
 export const checkoutCart = products => dispatch => {
-  dispatch({type: CHECKOUT_CART, products})
+  dispatch({ type: CHECKOUT_CART, products })
 }
 
 export const showProduct = product => dispatch => {
   dispatch({ type: SHOW_PRODUCT, product });
 };
 
-export const addProduct = product => dispatch => {
+export const addProduct = ({ product }) => dispatch => {
+  console.log("ADD PRODUCT iiiiiiiiiiiiiiiiiiiiiii")
+  console.log(product);
+
   dispatch({ type: ADD_PRODUCT, product });
 };
 

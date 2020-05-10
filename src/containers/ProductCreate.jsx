@@ -1,12 +1,18 @@
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import * as productAction from "../actions";
+import { addProduct } from "../actions";
 import ProductCreateComp from "../components/ProductCreate"
 
 class ProductCreate extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log("props");
+        console.log(props);
+    }
+
     render() {
-        return <ProductCreateComp />;
+        return <ProductCreateComp addProduct={this.props.addProduct} />;
     }
 }
 
@@ -15,8 +21,4 @@ function mapStateToProps(state, ownProps) {
     return { productCreate };
 }
 
-function mapDispathProps(dispatch) {
-    return { actions: bindActionCreators(productAction, dispatch) };
-}
-
-export default connect(mapStateToProps, mapDispathProps)(ProductCreate);
+export default connect(mapStateToProps, { addProduct })(ProductCreate);
