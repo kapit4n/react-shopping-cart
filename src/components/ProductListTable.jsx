@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProductListTable = ({ products, removeProduct, addProduct, showProduct }) => {
   return <div>
-    <button onClick={() => addProduct("New Product")}>ADD</button>
+    <Link to={"/productCreate"}> <button> CREATE </button> </Link>
     <table class="table">
       <thead>
         <th>Index</th>

@@ -26,7 +26,6 @@ export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
 export const SHOW_PRODUCT = "SHOW_PRODUCT";
 
 export const addToCart = product => dispatch => {
-  
   dispatch({ type: PRODUCT_TO_CART, product });
 };
 

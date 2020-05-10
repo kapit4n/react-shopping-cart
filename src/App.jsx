@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import ProductList from "./containers/ProductList";
 import Product from "./containers/Product";
+import ProductCreate from "./containers/ProductCreate";
 import Home from "./containers/cart/Home";
 import Nav from "./containers/cart/Nav";
 
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/products" component={ProductList} />
             <Route exact exact path="/productShow/:id" component={Product} />
+            <Route exact exact path="/productCreate" component={ProductCreate} />
           </div>
         </div>
 
