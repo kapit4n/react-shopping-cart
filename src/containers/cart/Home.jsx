@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import HomeProducts from "../../components/cart/HomeProducts";
-import { addToCart, displayCartInfo, hideCartInfo, displayFilters, hideFilters, searchProducts } from "../../actions";
+import { addToCart, displayCartInfo, hideCartInfo, displayFilters, hideFilters, searchProducts, changeDisplayCartMode } from "../../actions";
 import ProductCard from "../../components/cart/ProductCard";
 import CartInfo from "../../containers/cart/CartInfo";
 
@@ -91,11 +91,15 @@ class Home extends React.Component {
                   Search
                     </button>
               </div>
+              <div>
+                <button onClick={this.props.changeDisplayCartMode}>Change Cart Mode</button>
+              </div>
               {this.props.products.map(product => (
                 <ProductCard
                   addToCart={() => this.props.addToCart(product)}
                   product={product}
                   key={product.id}
+                  fullMode={this.props.fullMode}
                 />
               ))}
             </div>
@@ -111,6 +115,7 @@ function mapStateToProps(state, ownProps) {
     return {
       products: state.products.todoApp.products,
       display: state.products.todoApp.cartInfo.display,
+      fullMode: state.products.todoApp.cartInfo.fullMode,
       displayFiltersBox: state.products.todoApp.filters.display,
     };
   }
@@ -119,5 +124,5 @@ function mapStateToProps(state, ownProps) {
 
 export default connect(
   mapStateToProps,
-  { addToCart, displayCartInfo, hideCartInfo, displayFilters, hideFilters, searchProducts }
+  { addToCart, displayCartInfo, hideCartInfo, displayFilters, hideFilters, searchProducts, changeDisplayCartMode }
 )(Home);

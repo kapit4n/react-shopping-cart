@@ -32,6 +32,11 @@ export function todoApp(state = initialState, action) {
   let cartTotal = 0;
 
   switch (action.type) {
+    case "CHANGE_DISPLAY_CART_MODE":
+      return {
+        ...state,
+        cartInfo: { ...state.cartInfo, fullMode: !state.cartInfo.fullMode },
+      };
     case "DISPLAY_FILTERS":
       return {
         ...state,
