@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import HomeProducts from "../../components/cart/HomeProducts";
-import { addToCart } from "../../actions";
+import { addToCart, displayCartInfo, hideCartInfo } from "../../actions";
 import ProductCard from "../../components/cart/ProductCard";
 import CartInfo from "../../containers/cart/CartInfo";
 
@@ -11,12 +11,34 @@ class Home extends React.Component {
       <HomeProducts>
         <div className="row" style={{ backgroundColor: 'rgb(240, 240, 245)', margin: 0, width: '100%' }}>
           <div className="col-md-4">
-            <div style={{ marginTop: "1rem", boxShadow: '4px 5px 20px -7px rgba(117,77,117,1)' }}>
-              <CartInfo />
-            </div>
+            {this.props.display ? (
+              <div style={{ marginTop: "1rem", boxShadow: '4px 5px 20px -7px rgba(117,77,117,1)' }}>
+                <button onClick={this.props.hideCartInfo}>Hide Cart</button>
+                <CartInfo />
+              </div>
+            ) : (
+                <button onClick={this.props.displayCartInfo}>Display Cart</button>
+              )}
           </div>
           <div className="col-md-8">
-            <div style={{ marginTop: '2rem' }}>
+            <div>
+              <div style={{ display: 'flex' }}>
+                <input
+                  className="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search by"
+                  aria-label="Search"
+                  onChange={this.props.updateInput}
+                  style={{ marginLeft: '1rem', margin: '1rem' }}
+                />
+                <button
+                  className="btn btn-outline-success"
+                  onClick={this.props.searchProducts}
+                  style={{ margin: '1rem' }}
+                >
+                  Search
+                    </button>
+              </div>
               {this.props.products.map(product => (
                 <ProductCard
                   addToCart={() => this.props.addToCart(product)}
@@ -35,7 +57,8 @@ class Home extends React.Component {
 function mapStateToProps(state, ownProps) {
   if (state) {
     return {
-      products: state.products.todoApp.products
+      products: state.products.todoApp.products,
+      display: state.products.todoApp.cartInfo.display
     };
   }
   return { products: [] };
@@ -43,5 +66,5 @@ function mapStateToProps(state, ownProps) {
 
 export default connect(
   mapStateToProps,
-  { addToCart }
+  { addToCart, displayCartInfo, hideCartInfo }
 )(Home);

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import NavComponent from "../../components/cart/NavComponent";
-import { searchProducts } from "../../actions";
+import { searchProducts, displayCartInfo, hideCartInfo } from "../../actions";
 
 class Nav extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class Nav extends React.Component {
 
     this.state = {
       searchText: "",
-      total: props.total
+      total: props.total,
     };
 
     this.updateInput = this.updateInput.bind(this);
@@ -40,9 +40,9 @@ function mapStateToProps(state, ownProps) {
     console.log("state NAV");
     console.log(state);
 
-    return { total: state.products.todoApp.cartInfo.total };
+    return { total: state.products.todoApp.cartInfo.total};
   }
-  return { total: 0 };
+  return { total: 0};
 }
 
 export default connect(

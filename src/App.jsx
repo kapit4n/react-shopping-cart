@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App row">
-        <div style={{ width: "100%", height: '3rem', zIndex: '-4' }}>
+        <div style={{ width: "100%", height: '1rem', zIndex: '-4' }}>
           <img style={{ width: "100%", objectFit: 'cover', marginTop: '-5rem' }}
             src="https://di-uploads-pod19.dealerinspire.com/universitycjdr/uploads/2019/08/2018-Jeep-Wrangler-Unlimited-banner.png" />
         </div>

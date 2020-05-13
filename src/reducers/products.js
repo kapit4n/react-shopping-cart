@@ -104,7 +104,8 @@ const initialState = {
       description:
         "What are the fastest automobiles on the planet? CBS Miami took a spin and crunched the numbers for us, producing this list of the slickest speedsters on the road. You may be surprised by some of the names on this list, but one thing that is no surprise is the inclusion of Lamborghini. The venerable Italian carmaker has a reputation for speed, and their Aventador is the best of the bunch. The Lamborghini Aventador can reach a speed of 220 mph, and go from 0 to 60 in 2.9 secs."
     }],
-    total: 1 * 20
+    total: 1 * 20,
+    display: true
   }
 };
 
@@ -159,6 +160,16 @@ export function todoApp(state = initialState, action) {
         product: state.product,
         productShow: state.productShow,
         cartInfo: state.cartInfo
+      };
+    case "DISPLAY_CART_INFO":
+      return {
+        ...state,
+        cartInfo: { ...state.cartInfo, display: true }
+      };
+    case "HIDE_CART_INFO":
+      return {
+        ...state,
+        cartInfo: { ...state.cartInfo, display: false }
       };
     case "REMOVE_FROM_CART":
       let cartProducts = [

@@ -19,6 +19,8 @@ export const SHOW_ALL = "SHOW_ALL";
 
 export const PRODUCT_TO_CART = "PRODUCT_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const HIDE_CART_INFO = "HIDE_CART_INFO";
+export const DISPLAY_CART_INFO = "DISPLAY_CART_INFO";
 export const CHECKOUT_CART = "CHECKOUT_CART";
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const ADD_PRODUCT = "ADD_PRODUCT";
@@ -31,6 +33,14 @@ export const addToCart = product => dispatch => {
 
 export const removeFromCart = product => dispatch => {
   dispatch({ type: REMOVE_FROM_CART, product });
+};
+
+export const displayCartInfo = () => dispatch => {
+  dispatch({ type: DISPLAY_CART_INFO });
+};
+
+export const hideCartInfo = () => dispatch => {
+  dispatch({ type: HIDE_CART_INFO });
 };
 
 export const checkoutCart = products => dispatch => {

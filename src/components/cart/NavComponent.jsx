@@ -1,26 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavComponent = ({ searchProducts, updateInput, total }) => {
+const NavComponent = ({ total, display }) => {
   return (
     <div style={{ width: '100%', backgroundColor: 'rgba(218, 225, 237, 0.3)' }}>
       <div style={{ width: '100%', display: 'flex' }}>
-        <input
-          className="form-control mr-sm-2"
-          type="search"
-          placeholder="Search by"
-          aria-label="Search"
-          onChange={updateInput}
-          style={{ marginLeft: '1rem', margin: '1rem' }}
-        />
-        <div style={{ padding: '1rem' }}>
-          <button
-            className="btn btn-outline-success"
-            onClick={searchProducts}
-          >
-            Search
-          </button>
-        </div>
         <span style={{ padding: '1rem', color: 'black' }}>Cart</span>
         <div>
           <img src="https://findicons.com/files/icons/1579/devine/256/cart.png" height={20} />
