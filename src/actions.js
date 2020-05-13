@@ -8,6 +8,10 @@ export const HIDE_CART_INFO = "HIDE_CART_INFO";
 export const DISPLAY_CART_INFO = "DISPLAY_CART_INFO";
 export const CHECKOUT_CART = "CHECKOUT_CART";
 
+export const HIDE_FILTERS = "HIDE_FILTERS";
+export const DISPLAY_FILTERS = "DISPLAY_FILTERS";
+
+
 export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const SHOW_PRODUCT = "SHOW_PRODUCT";
@@ -23,6 +27,14 @@ export const removeFromCart = product => dispatch => {
 
 export const searchProducts = searchText => dispatch => {
   dispatch({ type: SEARCH_PRODUCTS, value: searchText });
+};
+
+export const displayFilters = () => dispatch => {
+  dispatch({ type: DISPLAY_FILTERS });
+};
+
+export const hideFilters = () => dispatch => {
+  dispatch({ type: HIDE_FILTERS });
 };
 
 export const displayCartInfo = () => dispatch => {

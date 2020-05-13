@@ -9,6 +9,10 @@ const initialState = {
     products: [],
     total: 0,
     display: true
+  },
+  filters: {
+    values: [],
+    display: true,
   }
 };
 
@@ -28,6 +32,16 @@ export function todoApp(state = initialState, action) {
   let cartTotal = 0;
 
   switch (action.type) {
+    case "DISPLAY_FILTERS":
+      return {
+        ...state,
+        filters: { ...state.filters, display: true },
+      };
+    case "HIDE_FILTERS":
+      return {
+        ...state,
+        filters: { ...state.filters, display: false },
+      };
     case "SHOW_PRODUCT":
       return {
         ...state,
