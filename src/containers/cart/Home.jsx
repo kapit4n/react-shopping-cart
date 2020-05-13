@@ -8,13 +8,28 @@ import CartInfo from "../../containers/cart/CartInfo";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchText: '' };
+    this.state = { searchText: '', rangeValue: 50000, min: 2000, max: 1000000 };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleRangeChange = this.handleRangeChange.bind(this);
+    this.handleMinChange = this.handleMinChange.bind(this);
+    this.handleMaxChange = this.handleMaxChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({ searchText: event.target.value });
+  }
+
+  handleRangeChange(event) {
+    this.setState({ rangeValue: event.target.value });
+  }
+
+  handleMinChange(event) {
+    this.setState({ min: event.target.value });
+  }
+
+  handleMaxChange(event) {
+    this.setState({ max: event.target.value });
   }
 
   render() {
@@ -28,7 +43,7 @@ class Home extends React.Component {
               ) : (
                   <button onClick={this.props.displayCartInfo}>Display Cart</button>
                 )}
-                
+
               {this.props.displayFiltersBox ? (
                 <button onClick={this.props.hideFilters}>Hide Filters</button>
               ) : (
@@ -40,6 +55,19 @@ class Home extends React.Component {
             {this.props.display && (
               <div style={{ marginTop: "1rem", boxShadow: '4px 5px 20px -7px rgba(117,77,117,1)' }}>
                 <CartInfo />
+              </div>
+            )}
+            {this.props.displayFiltersBox && (
+              <div style={{ width: '100%' }}>
+                Price
+                <div style={{ width: '100%', display: 'flex', padding: '1rem', justifyContent: 'space-between' }}>
+                  Min: <input style={{ width: 80 }} value={this.state.min} onChange={this.handleMinChange} />
+                Max: <input style={{ width: 80 }} value={this.state.max} onChange={this.handleMaxChange} />
+                </div>
+                <div style={{ width: '100%' }}>
+                  <input style={{ width: '100%' }} type="range" min={this.state.min} max={this.state.max} value={this.state.rangeValue} onChange={this.handleRangeChange} class="slider" id="myRange" />
+                  {this.state.rangeValue}
+                </div>
               </div>
             )}
           </div>
