@@ -2,6 +2,11 @@
 
 ## Available Scripts
 
+### tech
+- redux
+- react
+- react form hooks
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
