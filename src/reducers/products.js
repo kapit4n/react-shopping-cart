@@ -171,20 +171,18 @@ export function todoApp(state = initialState, action) {
           Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
       }
       return {
-        products: state.products,
-        product: state.product,
-        productShow: state.productShow,
+        ...state,
         cartInfo: {
+          ...state.cartInfo,
           products: cartProducts,
           total: cartTotal
         }
       };
     case "CHECKOUT_CART":
       return {
-        products: state.products,
-        product: state.product,
-        productShow: state.productShow,
+        ...state,
         cartInfo: {
+          ...state.cartInfo,
           products: [],
           total: 0
         }
@@ -207,10 +205,9 @@ export function todoApp(state = initialState, action) {
             Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
         }
         return {
-          products: state.products,
-          product: state.product,
-          productShow: state.productShow,
+          ...state,
           cartInfo: {
+            ...state.cartInfo,
             products: cartProducts,
             total: cartTotal
           }
@@ -225,11 +222,10 @@ export function todoApp(state = initialState, action) {
           cartTotal =
             Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
         }
+
         return {
-          products: state.products,
-          product: state.product,
-          productShow: state.productShow,
-          cartInfo: { products: cartProducts, total: cartTotal }
+          ...state,
+          cartInfo: { ...state.cartInfo, products: cartProducts, total: cartTotal }
         };
       }
     default:
