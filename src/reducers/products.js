@@ -109,21 +109,6 @@ const initialState = {
   }
 };
 
-function addToCart(state = initialState, action) {
-  switch (action.type) {
-    case "ADD_TO_CART":
-      return Object.assign({}, state, action.product);
-    case "PRODUCT_TO_CART":
-      if (state.some(p => p == action.product)) {
-        let car = state.find(p => p == action.product);
-      } else {
-        return Object.assign({}, ...state, action.product);
-      }
-    default:
-      return state;
-  }
-}
-
 export function todoApp(state = initialState, action) {
   const reducer = (accumulator, currentValue) => {
     if (typeof accumulator == "number") {
@@ -142,24 +127,28 @@ export function todoApp(state = initialState, action) {
   switch (action.type) {
     case "SHOW_PRODUCT":
       return {
-        products: [...state.products, action.product],
-        product: action.product,
+        ...state,
         productShow: action.product,
-        cartInfo: state.cartInfo
+      };
+    case "SEARCH_PRODUCTS":
+      return {
+        ...state,
+        products: [...productsOriginal.filter(x => {
+          if (action.value) {
+            return x.name.toLowerCase().includes(action.value.toLowerCase())
+          }
+          return true;
+        })]
       };
     case "ADD_PRODUCT":
       return {
+        ...state,
         products: [...state.products, action.product],
-        product: state.product,
-        productShow: state.productShow,
-        cartInfo: state.cartInfo
       };
     case "REMOVE_PRODUCT":
       return {
+        ...state,
         products: state.products.filter(pro => pro != action.product),
-        product: state.product,
-        productShow: state.productShow,
-        cartInfo: state.cartInfo
       };
     case "DISPLAY_CART_INFO":
       return {
@@ -243,18 +232,6 @@ export function todoApp(state = initialState, action) {
           cartInfo: { products: cartProducts, total: cartTotal }
         };
       }
-    case "SEARCH_PRODUCT":
-      return {
-        products: productsOriginal.filter(p =>
-          p.name.toLowerCase().includes(action.searchValue.toLowerCase())
-        ),
-        product: state.product,
-        productShow: state.productShow,
-        cartInfo: {
-          products: [...state.cartInfo.products],
-          total: state.cartInfo.total
-        }
-      };
     default:
       return state;
   }

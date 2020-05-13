@@ -6,9 +6,6 @@ import {
 
 
 function ProductCreate({ addProduct, history }) {
-
-  console.log(history);
-
   const { register, handleSubmit } = useForm({
     defaultValues: {
       name: "",

@@ -26,6 +26,7 @@ export const REMOVE_PRODUCT = "REMOVE_PRODUCT";
 export const ADD_PRODUCT = "ADD_PRODUCT";
 export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
 export const SHOW_PRODUCT = "SHOW_PRODUCT";
+export const SEARCH_PRODUCTS = "SEARCH_PRODUCTS";
 
 export const addToCart = product => dispatch => {
   dispatch({ type: PRODUCT_TO_CART, product });
@@ -33,6 +34,10 @@ export const addToCart = product => dispatch => {
 
 export const removeFromCart = product => dispatch => {
   dispatch({ type: REMOVE_FROM_CART, product });
+};
+
+export const searchProducts = searchText => dispatch => {
+  dispatch({ type: SEARCH_PRODUCTS, value: searchText });
 };
 
 export const displayCartInfo = () => dispatch => {
@@ -56,10 +61,6 @@ export const addProduct = ({ product }) => dispatch => {
   console.log(product);
 
   dispatch({ type: ADD_PRODUCT, product });
-};
-
-export const searchProducts = searchValue => dispatch => {
-  dispatch({ type: SEARCH_PRODUCT, searchValue });
 };
 
 export const removeProduct = product => dispatch => {

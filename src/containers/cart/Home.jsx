@@ -1,11 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
 import HomeProducts from "../../components/cart/HomeProducts";
-import { addToCart, displayCartInfo, hideCartInfo } from "../../actions";
+import { addToCart, displayCartInfo, hideCartInfo, searchProducts } from "../../actions";
 import ProductCard from "../../components/cart/ProductCard";
 import CartInfo from "../../containers/cart/CartInfo";
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { searchText: '' };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ searchText: event.target.value });
+  }
+
   render() {
     return (
       <HomeProducts>
@@ -28,12 +39,13 @@ class Home extends React.Component {
                   type="search"
                   placeholder="Search by"
                   aria-label="Search"
-                  onChange={this.props.updateInput}
+                  onChange={this.handleChange}
+                  value={this.state.searchText}
                   style={{ marginLeft: '1rem', margin: '1rem' }}
                 />
                 <button
                   className="btn btn-outline-success"
-                  onClick={this.props.searchProducts}
+                  onClick={() => this.props.searchProducts(this.state.searchText)}
                   style={{ margin: '1rem' }}
                 >
                   Search
@@ -66,5 +78,5 @@ function mapStateToProps(state, ownProps) {
 
 export default connect(
   mapStateToProps,
-  { addToCart, displayCartInfo, hideCartInfo }
+  { addToCart, displayCartInfo, hideCartInfo, searchProducts }
 )(Home);
