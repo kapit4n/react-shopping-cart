@@ -1,6 +1,11 @@
-![Home](https://raw.githubusercontent.com/kapit4n/react-shopping-cart/master/mockups/rreact2-seller-home06.png)
+![Home](https://raw.githubusercontent.com/kapit4n/react-shopping-cart/master/mockups/react2-seller-home06.png)
 
 ## Available Scripts
+
+### tech
+- redux
+- react
+- react form hooks
 
 ### `npm start`
 
