@@ -4,16 +4,12 @@ import { addProduct } from "../actions";
 import ProductCreateComp from "../components/ProductCreate"
 
 class ProductCreate extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <ProductCreateComp addProduct={this.props.addProduct} />;
     }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
     const { productCreate } = state.products.todoApp;
     return { productCreate };
 }

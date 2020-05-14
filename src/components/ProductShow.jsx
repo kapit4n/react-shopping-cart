@@ -7,7 +7,7 @@ const ProductShow = ({ product, productId }) => {
       <dd>{product.name}</dd>
       <dt>Image</dt>
       <dd>
-        <img src={product.img} style={{ width: '20rem' }} />
+        <img src={product.img} style={{ width: '20rem' }} alt="Product Image"/>
       </dd>
       <dt>Details</dt>
       <dd>

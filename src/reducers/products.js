@@ -18,7 +18,7 @@ const initialState = {
 
 export function todoApp(state = initialState, action) {
   const reducer = (accumulator, currentValue) => {
-    if (typeof accumulator == "number") {
+    if (typeof accumulator === "number") {
       return (
         accumulator + Number(currentValue.quantity) * Number(currentValue.price)
       );
@@ -70,7 +70,7 @@ export function todoApp(state = initialState, action) {
     case "REMOVE_PRODUCT":
       return {
         ...state,
-        products: state.products.filter(pro => pro != action.product),
+        products: state.products.filter(pro => pro !== action.product),
       };
     case "DISPLAY_CART_INFO":
       return {
@@ -84,11 +84,11 @@ export function todoApp(state = initialState, action) {
       };
     case "REMOVE_FROM_CART":
       let cartProducts = [
-        ...state.cartInfo.products.filter(p => p.name != action.product.name)
+        ...state.cartInfo.products.filter(p => p.name !== action.product.name)
       ];
       if (cartProducts.length > 1) {
         cartTotal = cartProducts.reduce(reducer);
-      } else if (cartProducts.length == 1) {
+      } else if (cartProducts.length === 1) {
         cartTotal =
           Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
       }
@@ -110,19 +110,19 @@ export function todoApp(state = initialState, action) {
         }
       };
     case "PRODUCT_TO_CART":
-      if (state.cartInfo.products.some(p => p.name == action.product.name)) {
+      if (state.cartInfo.products.some(p => p.name === action.product.name)) {
         let selected = state.cartInfo.products.find(
-          p => p.name == action.product.name
+          p => p.name === action.product.name
         );
         selected.quantity += 1;
         let noSelected = state.cartInfo.products.filter(
-          p => p.name != action.product.name
+          p => p.name !== action.product.name
         );
 
         let cartProducts = [...noSelected, selected];
         if (cartProducts.length > 1) {
           cartTotal = cartProducts.reduce(reducer);
-        } else if (cartProducts.length == 1) {
+        } else if (cartProducts.length === 1) {
           cartTotal =
             Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
         }
@@ -140,7 +140,7 @@ export function todoApp(state = initialState, action) {
         let cartProducts = [...state.cartInfo.products, p];
         if (cartProducts.length > 1) {
           cartTotal = cartProducts.reduce(reducer);
-        } else if (cartProducts.length == 1) {
+        } else if (cartProducts.length === 1) {
           cartTotal =
             Number(cartProducts[0].quantity) * Number(cartProducts[0].price);
         }

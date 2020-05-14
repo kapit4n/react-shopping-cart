@@ -7,7 +7,7 @@ const NavComponent = ({ total, display }) => {
       <div style={{ width: '100%', display: 'flex' }}>
         <span style={{ padding: '1rem', color: 'black' }}>Cart</span>
         <div>
-          <img src="https://findicons.com/files/icons/1579/devine/256/cart.png" height={20} />
+          <img src="https://findicons.com/files/icons/1579/devine/256/cart.png" height={20} alt="Cart Info Code"/>
           <span style={{ padding: '0.3rem', color: 'black' }}>(${total})</span>
         </div>
       </div>

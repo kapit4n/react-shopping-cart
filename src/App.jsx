@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import ProductList from "./containers/ProductList";
 import Product from "./containers/Product";
 import ProductCreate from "./containers/ProductCreate";
@@ -21,8 +21,8 @@ class App extends Component {
           <div className="col-md-12" style={{}}>
             <Route exact path="/" component={Home} />
             <Route path="/products" component={ProductList} />
-            <Route exact exact path="/productShow/:id" component={Product} />
-            <Route exact exact path="/productCreate" component={ProductCreate} />
+            <Route exact path="/productShow/:id" component={Product} />
+            <Route exact path="/productCreate" component={ProductCreate} />
           </div>
         </div>
 
