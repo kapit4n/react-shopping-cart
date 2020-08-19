@@ -22,6 +22,7 @@ class CartInfoMobile extends React.Component {
           <div>TotalM: {this.props.cartInfo.total}</div>
           <div>
             <button
+              className="btn btn-outline-success"
               onClick={() =>
                 this.props.checkoutCart(this.props.cartInfo.products)
               }
@@ -33,7 +34,7 @@ class CartInfoMobile extends React.Component {
           <table className="table">
             <thead>
               <tr>
-                <th>NameM</th>
+                <th>Name</th>
                 <th>Qty</th>
                 <th>Price</th>
                 <th />

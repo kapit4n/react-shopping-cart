@@ -39,15 +39,15 @@ class Home extends React.Component {
           <div className="col-md-4">
             <div>
               {this.props.display ? (
-                <button onClick={this.props.hideCartInfo}>Hide Cart</button>
+                <button className="btn btn-outline-success" onClick={this.props.hideCartInfo}>Hide Cart</button>
               ) : (
-                  <button onClick={this.props.displayCartInfo}>Display Cart</button>
+                  <button className="btn btn-outline-success" onClick={this.props.displayCartInfo}>Display Cart</button>
                 )}
 
               {this.props.displayFiltersBox ? (
-                <button onClick={this.props.hideFilters}>Hide Filters</button>
+                <button className="btn btn-outline-success" onClick={this.props.hideFilters}>Hide Filters</button>
               ) : (
-                  <button onClick={this.props.displayFilters}>Display Filters</button>
+                  <button className="btn btn-outline-success" onClick={this.props.displayFilters}>Display Filters</button>
                 )}
 
             </div>
@@ -92,7 +92,7 @@ class Home extends React.Component {
                     </button>
               </div>
               <div>
-                <button onClick={this.props.changeDisplayCartMode}>Change Cart Mode</button>
+                <button className="btn btn-outline-success" onClick={this.props.changeDisplayCartMode}>Change Cart Mode</button>
               </div>
               {this.props.products.map(product => (
                 <ProductCard

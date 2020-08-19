@@ -20,7 +20,7 @@ class CartInfo extends React.Component {
         Total: {this.props.cartInfo.total}
       </div>
       <div>
-        <button onClick={() => this.props.checkoutCart(this.props.cartInfo.products)}>CHECKOUT</button>
+        <button className="btn btn-outline-success" onClick={() => this.props.checkoutCart(this.props.cartInfo.products)}>CHECKOUT</button>
       </div>
     </div>
   }
