@@ -11,13 +11,9 @@ class App extends Component {
   render() {
     return (
       <div className="App row">
-        <div style={{ width: "100%", height: '1rem', zIndex: '-4' }}>
-          <img style={{ width: "100%", objectFit: 'cover', marginTop: '-5rem' }}
-            src="https://di-uploads-pod19.dealerinspire.com/universitycjdr/uploads/2019/08/2018-Jeep-Wrangler-Unlimited-banner.png" />
-        </div>
         <Nav> </Nav>
 
-        <div className="row" style={{ backgroundColor: 'rgb(240, 240, 245)', margin: 0, width: '100%' }}>
+        <div className="row" style={{ backgroundColor: '#cfe0e8', margin: 0, width: '100%' }}>
           <div className="col-md-12" style={{}}>
             <Route exact path="/" component={Home} />
             <Route path="/products" component={ProductList} />

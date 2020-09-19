@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavComponent = ({ total, display }) => {
   return (
-    <div style={{ width: '100%', backgroundColor: 'rgba(218, 225, 237, 0.3)' }}>
+    <div style={{ width: '100%', backgroundColor: '#87bdd8' }}>
       <div style={{ width: '100%', display: 'flex' }}>
         <span style={{ padding: '1rem', color: 'black' }}>Cart</span>
         <div>
@@ -13,9 +13,9 @@ const NavComponent = ({ total, display }) => {
       </div>
 
       <nav className="navbar navbar-expand-lg" style={{
-        justifyContent: 'space-between', width: '100%', display: 'flex', backgroundColor: '#001a33', color: '#ffffff'
+        justifyContent: 'space-between', width: '100%', display: 'flex', backgroundColor: '#b7d7e8', color: 'black'
       }}>
-        < a className="navbar-brand" href="#" style={{ color: '#ffffff' }}>
+        < a className="navbar-brand" href="#" style={{ color: 'black' }}>
           2 Seller
       </a >
         <button
