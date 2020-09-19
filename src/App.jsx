@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
-import ProductList from "./containers/ProductList";
-import Product from "./containers/Product";
-import ProductCreate from "./containers/ProductCreate";
+import ProductList from "./containers/products/ProductList";
+import Product from "./containers/products/Product";
+import ProductCreate from "./containers/products/ProductCreate";
 import Home from "./containers/cart/Home";
 import Nav from "./containers/cart/Nav";
 

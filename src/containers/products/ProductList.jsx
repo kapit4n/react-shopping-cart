@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { removeProduct } from "../actions";
-import { addProduct } from "../actions";
-import { showProduct } from "../actions";
-import ProductListTable from "../components/ProductListTable";
+import { showProduct, addProduct, removeProduct } from "../../actions";
+import ProductListTable from "../../components/products/ProductListTable";
 
 class ProductList extends React.Component {
     render() {
