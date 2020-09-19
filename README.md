@@ -1,4 +1,4 @@
-![Home](https://raw.githubusercontent.com/kapit4n/react-shopping-cart/master/mockups/react2-seller-home06.png)
+![Home](https://raw.githubusercontent.com/kapit4n/react-shopping-cart/master/mockups/react-shopping-cart-home-01.png)
 
 ## Available Scripts
 
