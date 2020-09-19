@@ -35,7 +35,7 @@ class Home extends React.Component {
   render() {
     return (
       <HomeProducts>
-        <div className="row" style={{ backgroundColor: 'rgb(240, 240, 245)', margin: 0, width: '100%' }}>
+        <div className="row" style={{ backgroundColor: '#daebe8', margin: 0, width: '100%' }}>
           <div className="col-md-4">
             <div>
               {this.props.display ? (
