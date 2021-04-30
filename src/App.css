@@ -69,7 +69,7 @@
 
 @media only screen and (max-width: 450px) {
   .product-card {
-    width: 48%;
+    width: 100%;
     display: inline-flex;
   }
 }

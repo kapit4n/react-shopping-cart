@@ -13,7 +13,8 @@ const initialState = {
   filters: {
     values: [],
     display: true,
-  }
+  },
+  searchTerm: ''
 };
 
 export function todoApp(state = initialState, action) {
@@ -55,6 +56,7 @@ export function todoApp(state = initialState, action) {
     case "SEARCH_PRODUCTS":
       return {
         ...state,
+        searchTerm: action.value,
         products: [...productsOriginal.filter(x => {
           if (action.value) {
             return x.name.toLowerCase().includes(action.value.toLowerCase())

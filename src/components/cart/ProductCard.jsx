@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProductCard = ({ addToCart, product, fullMode }) => {
-  return <div className={fullMode ? "card product-card-full": "card product-card"} style={{
+  return <div className={"card product-card"} style={{
     borderWidth: "5px", borderStyle: "solid",
     boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
   }}>

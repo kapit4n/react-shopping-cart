@@ -8,7 +8,7 @@ import CartInfo from "../../containers/cart/CartInfo";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchText: '', rangeValue: 50000, min: 2000, max: 1000000 };
+    this.state = { rangeValue: 50000, min: 2000, max: 1000000 };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleRangeChange = this.handleRangeChange.bind(this);
@@ -17,7 +17,8 @@ class Home extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ searchText: event.target.value });
+    console.log("CHANGED")
+    this.props.searchProducts(event.target.value)
   }
 
   handleRangeChange(event) {
@@ -37,7 +38,7 @@ class Home extends React.Component {
       <HomeProducts>
         <div className="row" style={{ backgroundColor: '#daebe8', margin: 0, width: '100%' }}>
           <div className="col-md-4">
-            <div>
+            <div style={{ display: 'none' }}>
               {this.props.display ? (
                 <button className="btn btn-outline-success" onClick={this.props.hideCartInfo}>Hide Cart</button>
               ) : (
@@ -53,12 +54,12 @@ class Home extends React.Component {
             </div>
 
             {this.props.display && (
-              <div style={{ marginTop: "1rem", boxShadow: '4px 5px 20px -7px rgba(117,77,117,1)' }}>
+              <div style={{ marginTop: "1rem", boxShadow: '4px 5px 20px -7px rgba(117,77,117,1)', display: 'none' }}>
                 <CartInfo />
               </div>
             )}
             {this.props.displayFiltersBox && (
-              <div style={{ width: '100%' }}>
+              <div style={{ width: '100%', display: 'none' }}>
                 Price
                 <div style={{ width: '100%', display: 'flex', padding: '1rem', justifyContent: 'space-between' }}>
                   Min: <input style={{ width: 80 }} value={this.state.min} onChange={this.handleMinChange} />
@@ -71,7 +72,7 @@ class Home extends React.Component {
               </div>
             )}
           </div>
-          <div className="col-md-8">
+          <div className="col-md-12">
             <div>
               <div style={{ display: 'flex' }}>
                 <input
@@ -80,19 +81,9 @@ class Home extends React.Component {
                   placeholder="Search by"
                   aria-label="Search"
                   onChange={this.handleChange}
-                  value={this.state.searchText}
+                  value={this.props.searchTerm}
                   style={{ marginLeft: '1rem', margin: '1rem' }}
                 />
-                <button
-                  className="btn btn-outline-success"
-                  onClick={() => this.props.searchProducts(this.state.searchText)}
-                  style={{ margin: '1rem' }}
-                >
-                  Search
-                    </button>
-              </div>
-              <div>
-                <button className="btn btn-outline-success" onClick={this.props.changeDisplayCartMode}>Change Cart Mode</button>
               </div>
               {this.props.products.map(product => (
                 <ProductCard
@@ -117,6 +108,7 @@ function mapStateToProps(state, ownProps) {
       display: state.products.todoApp.cartInfo.display,
       fullMode: state.products.todoApp.cartInfo.fullMode,
       displayFiltersBox: state.products.todoApp.filters.display,
+      searchTerm: state.products.todoApp.searchTerm
     };
   }
   return { products: [] };
