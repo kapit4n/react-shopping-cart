@@ -7,7 +7,7 @@ const ProductListTable = ({ products, removeProduct, addProduct, showProduct }) 
       <Link to={"/productCreate"}> <button> CREATE </button> </Link>
 
     </div>
-    <table class="table">
+    <table className="table">
       <thead>
         <th>Index</th>
         <th>Product Name</th>

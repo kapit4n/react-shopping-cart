@@ -66,7 +66,7 @@ class Home extends React.Component {
                 Max: <input style={{ width: 80 }} value={this.state.max} onChange={this.handleMaxChange} />
                 </div>
                 <div style={{ width: '100%' }}>
-                  <input style={{ width: '100%' }} type="range" min={this.state.min} max={this.state.max} value={this.state.rangeValue} onChange={this.handleRangeChange} class="slider" id="myRange" />
+                  <input style={{ width: '100%' }} type="range" min={this.state.min} max={this.state.max} value={this.state.rangeValue} onChange={this.handleRangeChange} className="slider" id="myRange" />
                   {this.state.rangeValue}
                 </div>
               </div>

@@ -33,13 +33,13 @@ const NavComponent = ({ total, display }) => {
         <div className="" id="navbarSupportedContent">
 
           <div className="form-inline my-2 my-lg-0" style={{ width: '100%', display: 'flex' }}>
-            <ul class="navbar-nav mr-auto" style={{ marginLeft: '1rem' }}>
-              <li class="nav-item active" style={{ marginLeft: '1rem' }}>
+            <ul className="navbar-nav mr-auto" style={{ marginLeft: '1rem' }}>
+              <li className="nav-item active" style={{ marginLeft: '1rem' }}>
                 <Link to="/">
                   Home
               </Link>
               </li>
-              <li class="nav-item" style={{ marginLeft: '1rem' }}>
+              <li className="nav-item" style={{ marginLeft: '1rem' }}>
                 <Link to="/products">
                   Products
               </Link>
