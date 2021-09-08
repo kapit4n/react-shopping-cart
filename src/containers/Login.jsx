@@ -1,8 +1,8 @@
 import react from "react";
-import LoginComponent from "../components/cart/LoginComponent";
+import LoginComponent from "../components/LoginComponent";
 
-class ProductList extends react.Component {
+export default class Login extends react.Component {
   render() {
-    return <LoginComponent />;
+    return (<LoginComponent />)
   }
 }
