@@ -1,7 +1,9 @@
 import React from 'react';
-import Root from '../Root'
+import TestCompoent from '../ProductList'
 
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Enzyme, { shallow, mount } from 'enzyme';
 // Import Adapter
@@ -23,16 +25,20 @@ const store = createStore(r => r, {
   }
 })
 
-describe('shallow render Root', () => {
-  const wrapper = shallow(<Root store={store}/>)
+describe('shallow', () => {
+  const wrapper = shallow(<TestCompoent store={store} />)
   it('', () => {
     expect(wrapper).toMatchSnapshot()
   })
 })
 
-describe('mount render Root', () => {
+describe('mount', () => {
   const wrapper = mount(
-        <Root store={store}/>
+    <Provider store={store}>
+      <Router>
+        <TestCompoent />
+      </Router>
+    </Provider>
   )
   it('', () => {
     expect(wrapper).toMatchSnapshot()

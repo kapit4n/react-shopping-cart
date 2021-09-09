@@ -1,7 +1,8 @@
 import React from 'react';
-import Root from '../Root'
+import TestComponent from '../Product'
 
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 import Enzyme, { shallow, mount } from 'enzyme';
 // Import Adapter
@@ -23,19 +24,31 @@ const store = createStore(r => r, {
   }
 })
 
-describe('shallow render Root', () => {
-  const wrapper = shallow(<Root store={store}/>)
+describe('shallow', () => {
+
+  const mockedParams = {
+    route: { params: { id: 'whatever-id' } },
+    navigation: ''
+  };
+
+  const wrapper = shallow(<TestComponent 
+    store={store} 
+    {...mockedParams} 
+    match={{ params: { id: 1 }, isExact: true, path: "", url: "" }} />)
   it('', () => {
     expect(wrapper).toMatchSnapshot()
   })
 })
-
-describe('mount render Root', () => {
+/* 
+describe('mount', () => {
   const wrapper = mount(
-        <Root store={store}/>
+    <Provider store={store}>
+      <TestComponent />
+    </Provider>
   )
   it('', () => {
     expect(wrapper).toMatchSnapshot()
   })
 })
 
+ */

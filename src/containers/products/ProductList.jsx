@@ -4,19 +4,19 @@ import { showProduct, addProduct, removeProduct } from "../../actions";
 import ProductListTable from "../../components/products/ProductListTable";
 
 class ProductList extends React.Component {
-    render() {
-        return <>
-            <ProductListTable
-                products={this.props.products}
-                removeProduct={this.props.removeProduct}
-                addProduct={this.props.addProduct}
-                showProduct={this.props.showProduct} />;
-        </>
-    }
+  render() {
+    return <>
+      <ProductListTable
+        products={this.props.products}
+        removeProduct={this.props.removeProduct}
+        addProduct={this.props.addProduct}
+        showProduct={this.props.showProduct} />;
+    </>
+  }
 }
 
 function mapStateToProps(state, ownProps) {
-    return { products: state.products.todoApp.products }
+  return { products: state.products.todoApp.products }
 }
 
 export default connect(mapStateToProps, { removeProduct, addProduct, showProduct })(ProductList);

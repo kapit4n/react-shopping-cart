@@ -9,9 +9,11 @@ const ProductListTable = ({ products, removeProduct, addProduct, showProduct }) 
     </div>
     <table className="table">
       <thead>
-        <th>Index</th>
-        <th>Product Name</th>
-        <th>Action</th>
+        <tr>
+          <th>Index</th>
+          <th>Product Name</th>
+          <th>Action</th>
+        </tr>
       </thead>
       {products.map((product, index) => <tr>
         {" "}
