@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mount render App  1`] = `ReactWrapper {}`;
+
+exports[`mount render Root  1`] = `ReactWrapper {}`;
+
+exports[`shallow render App  1`] = `ShallowWrapper {}`;
+
+exports[`shallow render Root  1`] = `ShallowWrapper {}`;
