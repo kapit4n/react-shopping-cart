@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 
 
-function ProductCreate({ addProduct, history }) {
+export function ProductCreate({ addProduct, history }) {
   const { register, handleSubmit } = useForm({
     defaultValues: {
       name: "",
@@ -21,14 +21,14 @@ function ProductCreate({ addProduct, history }) {
   })} style={{ width: '100%' }}>
     <dl style={{ width: '100%' }}>
       <dt>Name</dt>
-      <dd><input type="text" name="name" ref={register} /></dd>
+      <dd><input type="text" {...register('name')} /></dd>
       <dt>Price</dt>
-      <dd><input type="number" name="price" ref={register} /></dd>
+      <dd><input type="number" {...register('price')} /></dd>
       <dt>Image</dt>
-      <dd><input type="text" name="img" ref={register} /></dd>
+      <dd><input type="text" {...register('img')} /></dd>
       <dt>Description</dt>
       <dd>
-        <textarea name="description" ref={register}></textarea>
+        <textarea name="description" {...register('description')}></textarea>
       </dd>
     </dl>
     <input type="submit" value="Submit" />
