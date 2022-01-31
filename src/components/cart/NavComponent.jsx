@@ -1,13 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Modal from 'react-modal';
 
-const NavComponent = ({ total, display }) => {
+const NavComponent = ({ total, products }) => {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+
   return (
     <div style={{ width: '100%', backgroundColor: '#87bdd8' }}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Example Modal"
+      >
+        <h2>Shopping cart</h2>
+        <div>
+          <ol>
+            {products.map(p => (<li>{p.name}</li>))}
+          </ol>
+        </div>
+        <button onClick={closeModal}>close</button>
+      </Modal>
+
       <div style={{ width: '100%', display: 'flex' }}>
         <span style={{ padding: '1rem', color: 'black' }}>Cart</span>
-        <div>
-          <img src="https://findicons.com/files/icons/1579/devine/256/cart.png" height={20} alt="Cart Info Code"/>
+        <div style={{ cursor: 'pointer' }} onClick={openModal}>
+          <img src="https://findicons.com/files/icons/1579/devine/256/cart.png" height={20} alt="Cart Info Code" />
           <span style={{ padding: '0.3rem', color: 'black' }}>(${total})</span>
         </div>
       </div>
