@@ -1,4 +1,4 @@
-export const productsOriginal2 = [
+export const productsOriginal = [
     {
         id: 1,
         name: "Lamborghini Aventador",
@@ -89,7 +89,7 @@ export const productsOriginal2 = [
     }
 ];
 
-export const productsOriginal = [
+export const productsOriginal2 = [
     {
         "id": 0, "name": "Car 0", "code": "cd - 100", "address": "Bolivia, Am St 0",
         "budget": 0,

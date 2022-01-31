@@ -10,7 +10,7 @@ class ProductCreate extends React.Component {
 }
 
 function mapStateToProps(state) {
-  const { productCreate } = state.products.todoApp;
+  const { productCreate } = state.products;
   return { productCreate };
 }
 

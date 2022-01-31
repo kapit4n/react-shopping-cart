@@ -16,7 +16,7 @@ class ProductList extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  return { products: state.products.todoApp.products }
+  return { products: state.products.products }
 }
 
 export default connect(mapStateToProps, { removeProduct, addProduct, showProduct })(ProductList);

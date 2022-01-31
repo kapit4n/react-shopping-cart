@@ -11,7 +11,7 @@ class Product extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  const { productShow } = state.products.todoApp;
+  const { productShow } = state.products;
   return { productShow, ...ownProps };
 }
 

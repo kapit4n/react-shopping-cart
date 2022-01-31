@@ -39,8 +39,8 @@ class Nav extends React.Component {
 function mapStateToProps(state, ownProps) {
   if (state) {
     return {
-      total: state.products.todoApp.cartInfo.total,
-      products: state.products.todoApp.cartInfo.products
+      total: state.products.cartInfo.total,
+      products: state.products.cartInfo.products
     };
   }
   return { total: 0 };

@@ -17,7 +17,7 @@ const initialState = {
   searchTerm: ''
 };
 
-export function todoApp(state = initialState, action) {
+export default function products(state = initialState, action) {
   const reducer = (accumulator, currentValue) => {
     if (typeof accumulator === "number") {
       return (
@@ -156,7 +156,3 @@ export function todoApp(state = initialState, action) {
       return state;
   }
 }
-
-export default combineReducers({
-  todoApp
-});

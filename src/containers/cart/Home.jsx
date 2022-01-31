@@ -104,11 +104,11 @@ class Home extends React.Component {
 function mapStateToProps(state, ownProps) {
   if (state) {
     return {
-      products: state.products.todoApp.products,
-      display: state.products.todoApp.cartInfo.display,
-      fullMode: state.products.todoApp.cartInfo.fullMode,
-      displayFiltersBox: state.products.todoApp.filters.display,
-      searchTerm: state.products.todoApp.searchTerm
+      products: state.products.products,
+      display: state.products.cartInfo.display,
+      fullMode: state.products.cartInfo.fullMode,
+      displayFiltersBox: state.products.filters.display,
+      searchTerm: state.products.searchTerm
     };
   }
   return { products: [] };

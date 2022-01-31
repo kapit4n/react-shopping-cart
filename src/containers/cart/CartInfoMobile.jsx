@@ -68,7 +68,7 @@ class CartInfoMobile extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  return { cartInfo: state.products.todoApp.cartInfo };
+  return { cartInfo: state.products.cartInfo };
 }
 
 export default connect(

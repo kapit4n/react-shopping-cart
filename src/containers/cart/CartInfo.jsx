@@ -27,7 +27,7 @@ class CartInfo extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  return { cartInfo: state.products.todoApp.cartInfo, ...ownProps };
+  return { cartInfo: state.products.cartInfo, ...ownProps };
 }
 
 
