@@ -1,16 +1,44 @@
+import { combineReducers } from "redux";
 import { productsOriginal } from "./productData"
 
 const initialState = {
-  products: productsOriginal
+  products: productsOriginal,
+  product: {},
+  productShow: {},
+  cartInfo: {
+    products: [],
+    total: 0,
+    display: true
+  },
+  filters: {
+    values: [],
+    display: true,
+  },
+  searchTerm: ''
 };
 
 export default function products(state = initialState, action) {
+  const reducer = (accumulator, currentValue) => {
+    if (typeof accumulator === "number") {
+      return (
+        accumulator + Number(currentValue.quantity) * Number(currentValue.price)
+      );
+    } else {
+      return (
+        Number(accumulator.quantity) * Number(accumulator.price) +
+        Number(currentValue.quantity) * Number(currentValue.price)
+      );
+    }
+  };
+  let cartTotal = 0;
+
   switch (action.type) {
-    case "LIST":
+    case "CHANGE_DISPLAY_CART_MODE":
       return {
-        ...state
+        ...state,
+        cartInfo: { ...state.cartInfo, fullMode: !state.cartInfo.fullMode },
       };
-    case "FILTER":
+    case "DISPLAY_FILTERS":
       return {
         ...state,
         filters: { ...state.filters, display: true },

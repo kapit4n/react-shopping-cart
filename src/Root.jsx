@@ -2,12 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-import App from "./App";
+import AppLegacy from "./app-legacy/AppLegacy";
+import App from "./app/App";
+
+const displayNewApp = true
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router>
-      <App />
+      {displayNewApp ? <App />: <AppLegacy />}
     </Router>
   </Provider>
 );

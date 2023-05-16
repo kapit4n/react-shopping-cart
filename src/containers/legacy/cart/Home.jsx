@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import HomeProducts from "../../components/cart/HomeProducts";
-import { addToCart, displayCartInfo, hideCartInfo, displayFilters, hideFilters, searchProducts, changeDisplayCartMode } from "../../actions";
-import ProductCard from "../../components/cart/ProductCard";
-import CartInfo from "../../containers/cart/CartInfo";
+import HomeProducts from "../../../components/legacy/cart/HomeProducts";
+import { addToCart, displayCartInfo, hideCartInfo, displayFilters, hideFilters, searchProducts, changeDisplayCartMode } from "../../../actions";
+import ProductCard from "../../../components/legacy/cart/ProductCard";
+import CartInfo from "./CartInfo";
 
 class Home extends React.Component {
   constructor(props) {

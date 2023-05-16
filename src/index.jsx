@@ -6,6 +6,8 @@ import reducer from "./reducers";
 import { getAllProducts } from './actions'
 import Root from "./Root";
 import { createLogger } from "redux-logger";
+import { createSlice, configureStore } from '@reduxjs/toolkit'
+
 
 const middleware = [thunk];
 

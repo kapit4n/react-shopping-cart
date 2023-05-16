@@ -1,8 +1,8 @@
 import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
-import * as productAction from "../../actions";
-import ProductShow from "../../components/products/ProductShow"
+import * as productAction from "../../../actions";
+import ProductShow from "../../../components/legacy/products/ProductShow"
 
 class Product extends React.Component {
   render() {

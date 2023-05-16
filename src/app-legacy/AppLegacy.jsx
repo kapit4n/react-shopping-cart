@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./AppLegacy.css";
 import { Route } from "react-router-dom";
-import ProductList from "./containers/products/ProductList";
-import Product from "./containers/products/Product";
-import ProductCreate from "./containers/products/ProductCreate";
-import Home from "./containers/cart/Home";
-import Nav from "./containers/cart/Nav";
+import ProductList from "../containers/legacy/products/ProductList";
+import Product from "../containers/legacy/products/Product";
+import ProductCreate from "../containers/legacy/products/ProductCreate";
+import Home from "../containers/legacy/cart/Home";
+import Nav from "../containers/legacy/cart/Nav";
 
 class App extends Component {
   render() {

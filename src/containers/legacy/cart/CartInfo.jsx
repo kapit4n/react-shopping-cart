@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { removeFromCart } from "../../actions";
-import { checkoutCart } from "../../actions";
+import { removeFromCart } from "../../../actions";
+import { checkoutCart } from "../../../actions";
 
 class CartInfo extends React.Component {
   render() {

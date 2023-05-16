@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import NavComponent from "../../components/cart/NavComponent";
-import { searchProducts } from "../../actions";
+import NavComponent from "../../../components/legacy/cart/NavComponent";
+import { searchProducts } from "../../../actions";
 
 class Nav extends React.Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { addProduct } from "../../actions";
-import ProductCreateComp from "../../components/products/ProductCreate"
+import { addProduct } from "../../../actions";
+import ProductCreateComp from "../../../components/legacy/products/ProductCreate"
 
 class ProductCreate extends React.Component {
   render() {

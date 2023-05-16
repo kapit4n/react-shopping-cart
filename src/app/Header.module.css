@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header input {
+  width: 30rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+}
+
+.headerLeftSide {
+  display: flex;
+  gap: 1rem;
+}
+
+.headerRightSide {
+  display: flex;
+  gap: 1rem;
+}
+
+.logo {
+  width: 80px;
+  height: 40px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.2rem;
+}
+
+button {
+  border-radius: 0.5rem;
+}
