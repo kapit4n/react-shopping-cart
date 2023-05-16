@@ -1,6 +1,6 @@
 # Shopping cart app
 
-![Home](https://raw.githubusercontent.com/kapit4n/react-shopping-cart/master/mockups/react2-seller-home07.png)
+![Home](https://raw.githubusercontent.com/kapit4n/react-shopping-cart/master/mockups/react-shopping-cart-home.png)
 
 ## Available Scripts
 
@@ -32,3 +32,8 @@ $ sudo apt-get update
 $ sudo apt install docker.io
 $ sudo snap install docker
 $ docker --version
+
+## TODO
+- React toolkit tools
+- API to save/list product items
+- Predictions and Estimations 
